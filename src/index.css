@@ -1,0 +1,4798 @@
+/* 
+====== 
+Variables 
+======
+*/
+:root {
+    --blue: #007bff;
+    --backgroundblue:#1A76D1;
+    --primaryLightColor: #d4e6a5;
+    --primaryColor: #476a2e;
+    --primaryDarkColor: #c02c03;
+    --mainWhite: #fff;
+    --offWhite: #f7f7f7;
+    --mainBackground: #f1f5f8;
+    --mainOverlay: rgba(35, 10, 36, 0.4);
+    --mainBlack: #222;
+    --mainGrey: #ececec;
+    --darkGrey: #afafaf;
+    --mainRed: #bd0303;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 0.3rem;
+    --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+    --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+    --mainBorderRadius: 0.25rem;
+    --smallWidth: 85vw;
+    --maxWidth: 40rem;
+    --fullWidth: 1170px;
+    
+  }
+  /* 
+  ====== 
+  Global Styles 
+  ======
+  */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--mainBlack);
+    background: var(--mainBackground);
+    line-height: 1.4;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h6 {
+    font-family: var(--slantedFont);
+    margin-bottom: 1.25rem;
+    /* letter-spacing: var(--mainSpacing); */
+  }
+  p {
+    margin-bottom: 1.25rem;
+  }
+  ul {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+    color: var(--mainBlack);
+  }
+  img {
+    width: 100%;
+    display: block;
+  }
+  
+  /* 
+  ====== 
+  Buttons 
+  ======
+  */
+  .navbar-appoinment-btn {
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    color: white;
+    background: var(--primaryColor);
+    
+    border: 2px solid var(--primaryColor);
+    padding: 0.45rem 0.8rem;
+    display: inline-block;
+    transition: var(--mainTransition);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--mainBorderRadius);
+    
+  }
+  .navbar-appoinment-btn:hover {
+    background-color:var(--blue);
+    
+  }
+  .navbar-appoinment-btn-link {
+    color: white;
+  }
+  .navbar-appoinment-btn-link:hover {
+    color: var(--mainBlack);
+  }
+  
+  /* 
+  ====== 
+  Navbar
+  ======
+  */
+  .navbar-outer {
+    background: var(--mainWhite);
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--primaryColor);
+    box-shadow: var(--lightShadow);
+    
+  }
+  .nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--smallWidth);
+    margin: 0 auto;
+    max-width: var(--fullWidth);
+  }
+  .navbar-menu{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+  }
+  .navbar-menu-ul{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    
+  }
+  .navbar-menu-ul li,.navbar-menu-ul-home {
+    text-decoration: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--mainBlack);
+    font-family: 'Times New Roman', Times, serif;
+    list-style-type: none;
+    letter-spacing: 0.05rem;
+    transition: transform 0.3s ease;
+  }
+  .navbar-menu-ul li:hover,.navbar-menu-ul-home:hover{
+    color: var(--blue);
+    transform: scale(1.1);
+
+  }
+  
+  .navbar-toggle {
+    display: none; 
+  }
+  
+  
+  @media screen and (max-width: 767px) {
+    .navbar-toggle {
+      display: block; 
+      position: absolute;
+      top: 1rem; 
+      left: 1rem; 
+      cursor: pointer;
+      color: var(--mainBlack); 
+      font-size: 1.5rem; 
+      padding-right: 5px;
+    }
+  
+    .navbar-menu {
+      display: none;
+    }
+  
+    .navbar-menu.active,.navbar-menu-ul  {
+      display: flex; 
+      flex-direction: column; 
+      position: absolute;
+      top: 2.5rem; 
+      left: 0; 
+      background-color: var(--mainWhite);
+      width: 100%; 
+      
+      padding-left: 20px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); 
+      z-index: 999; 
+      text-align: left ;
+      align-items: initial;
+    }
+    .navbar-logo-img{
+      width: 70%;
+      padding-left: 25px;
+    }
+    .navbar-appoinment-btn {
+      letter-spacing: 0.08rem;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.45rem;
+      
+      
+    }
+    .navbar-menu-ul li,.navbar-menu-ul-home {
+    
+      font-size: 1.3rem;
+      font-weight: bold;
+      
+    }
+    
+  
+  }
+
+  
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar-toggle {
+    
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+    color: var(--mainBlack);
+    font-size: 1.5rem;
+    padding-right: 5px;
+  }
+
+  .navbar-menu {
+   
+    display: none;
+  }
+
+  .navbar-menu.active,
+  .navbar-menu-ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    background-color: var(--mainWhite);
+    width: 100%;
+    padding-left: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    text-align: left !important;
+    align-items: initial;
+  }
+
+  .navbar-logo-img {
+    
+    width: 90%;
+    padding-left: 20px;
+  }
+  .navbar-appoinment-btn {
+    
+    font-size: 1.4rem; 
+  }
+  .navbar-menu-ul li,.navbar-menu-ul-home {
+    
+    font-size: 1.9rem;
+    font-weight: bold;
+    
+  }
+}
+
+
+
+/* 
+  ====== 
+  Carosal
+  ======
+  */
+ 
+  .carosal-slide {
+    display: flex;
+  }
+  
+  .carosal-slide-booking {
+    flex: 1;
+    padding: 50px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .carosal-slide-booking-btn a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+/* Styles for custom carousel arrows */
+.carousel-container {
+  position: relative;
+}
+
+.prev-arrow,
+.next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  background-color: var(--blue); /* Adjust background color and opacity */
+  border: none;
+  border-radius: 50%; /* Make it round */
+  cursor: pointer;
+  color: var(--mainGrey); /* Adjust arrow color */
+  font-size: 24px; /* Adjust arrow size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.prev-arrow:hover,
+.next-arrow:hover {
+  background-color: var(--mainBlack); /* Adjust hover background color and opacity */
+}
+
+.prev-arrow {
+  left: 10px; /* Adjust left positioning */
+}
+
+.next-arrow {
+  right: 10px; /* Adjust right positioning */
+}
+/* CSS for positioning content on the left side of the carousel slide */
+.carosal-slide {
+  position: relative;
+}
+
+.carosal-content {
+  position: absolute;
+  top: 50%;
+  left: 120px; /* Adjust as needed */
+  transform: translateY(-50%);
+  max-width: 600px;
+}
+
+ .carosal-content {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+} 
+
+.show {
+  opacity: 1;
+}  
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+   
+    
+  }
+  to {
+    opacity: 1;
+    
+    
+  }
+}  
+
+
+.carosal-content-text {
+  margin-bottom: 40px;
+}
+
+.carosal-content-text p{
+  color: var(--mainBlack);
+  font-size: 45px;
+  font-weight: bold;
+  text-transform: capitalize;
+
+}
+
+.carosal-content-text-p-span{
+color: var(--blue);
+}
+.carosal-content-text h5{
+  color: var(--mainBlack);
+  font-size:"18px"
+}
+.carosal-content-buttons {
+  display: flex;
+  
+}
+
+.carosal-content-buttons a {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.carosal-slide-booking-btn-link1{
+  text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    color: white;
+    background: var(--primaryColor);
+    margin-right: 30px;
+    border: 2px solid var(--primaryColor);
+    padding: 0.45rem 0.8rem;
+    display: inline-block;
+    transition: var(--mainTransition);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--mainBorderRadius);
+    transition: transform 0.3s ease;
+}
+
+.carosal-slide-booking-btn-link1:hover {
+  color: var(--mainBlack);
+  background-color:var(--blue);
+  transform: scale(1.1);
+}
+.carosal-slide-booking-btn-link2{
+  text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    color: white;
+    background: var(--darkGrey);
+    
+    border: 2px solid var(--primaryColor);
+    padding: 0.45rem 0.8rem;
+    display: inline-block;
+    transition: var(--mainTransition);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--mainBorderRadius);
+    transition: transform 0.3s ease;
+}
+
+.carosal-slide-booking-btn-link2:hover {
+  color: var(--mainBlack);
+  background-color:var(--primaryLightColor);
+  transform: scale(1.1);
+}
+
+.carosal-slide-booking1{
+  background-size: cover;
+}
+  
+
+@media screen and (max-width: 299px) {
+  
+  .carosal-slide-booking {
+    background-size:   contain; 
+    background-position: 500px center;
+    
+  }
+    
+
+  .carosal-content {
+    left: 52px; 
+    right:25px;
+    max-width: calc(100% - 40px);
+    
+  }
+
+  .carosal-content-text p,.carosal-content-text-p-span {
+    font-size: 26px; 
+  }
+
+  .carosal-content-text h5 {
+    font-size: 14px;
+  }
+  .carosal-content-buttons{
+    display: flex;
+    flex-direction: column;
+  }
+  .carosal-slide-booking-btn-link1{
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  .carosal-slide-booking-btn-link2{
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-right: 30px;
+  }
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+  
+  .carosal-slide-booking {
+    background-size:   contain; 
+    background-position: 600px center;
+    
+  }
+    
+
+  .carosal-content {
+    left: 52px; 
+    right:25px;
+    max-width: calc(100% - 40px);
+    
+  }
+
+  .carosal-content-text p,.carosal-content-text-p-span {
+    font-size: 33px; 
+  }
+
+  .carosal-content-text h5 {
+    font-size: 14px;
+  }
+  .carosal-content-buttons{
+    display: flex;
+    flex-direction: column;
+  }
+  .carosal-slide-booking-btn-link1{
+    font-size: 1.1rem;
+    font-weight: bold;
+    max-width: 210px;
+  }
+  .carosal-slide-booking-btn-link2{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-right: 30px;
+    max-width: 210px;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  
+  .carosal-slide-booking {
+    background-size:   contain; 
+    background-position: 900px center;
+    
+  }
+  .carosal-content {
+    left: 52px; 
+    right:25px;
+    max-width: calc(100% - 60px);
+    
+  }
+  .carosal-content-text p,.carosal-content-text-p-span {
+    font-size: 40px; 
+  }
+
+  .carosal-content-text h5 {
+    font-size: 14px;
+  }
+  .carosal-slide-booking-btn-link1{
+    font-size: 1.3rem;
+    font-weight: bold;
+    
+  }
+  .carosal-slide-booking-btn-link2{
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-right: 30px;
+    max-width: 210px;
+  }
+  
+}
+@media screen and (min-width: 1000px) and (max-width: 1050px) {
+  
+  .carosal-slide-booking {
+    background-size:   contain; 
+    background-position: 1000px center;
+    
+  }
+  .carosal-content {
+    left: 52px; 
+    right:25px;
+    max-width: calc(100% - 100px);
+    
+  }
+  .carosal-content-text p,.carosal-content-text-p-span {
+    font-size: 44px; 
+  }
+  .carosal-slide-booking-btn-link1{
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+  }
+  .carosal-slide-booking-btn-link2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 30px;
+    max-width: 210px;
+  }
+  
+}
+
+
+/* schedule */
+
+
+.schedule-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: var(--mainBackground);
+}
+
+.schedule-availabily{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  top: -30%;
+  transform: translateY(-30%);
+}
+
+.schedule-availabily-emergency, .schedule-availabily-timetable,.schedule-availabily-opening{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  max-width: 23vw;
+  min-width: 23vw;
+  max-height: 20vw;
+  min-height: 20vw;
+  background-color:var(--backgroundblue);
+  border-radius: 5px;
+  color: var(--mainWhite);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.schedule-availabily-emergency{
+  margin-right: 40px;
+  padding-left: 30px; 
+}
+.schedule-availabily-timetable{
+  margin-right: 40px;
+  padding-left: 30px;
+}
+.schedule-availabily-opening-arrow{
+   height: 35px;
+  width: 35px; 
+  
+}
+.schedule-availabily-opening-link{
+color: var(--mainWhite);
+font-size: 17px;
+  font-weight: 300;
+}
+.schedule-availabily-opening-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.schedule-availabily-opening-time-timing{
+  margin-right: 25px;
+}
+.schedule-availabily-emergency h2,.schedule-availabily-timetable h2, .schedule-availabily-opening h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+.schedule-availabily-emergency p,.schedule-availabily-timetable p, .schedule-availabily-opening p {
+  font-size: 17px;
+  font-weight: 300;
+}
+.schedule-availabily-opening-time-days p,.schedule-availabily-opening-time-timing p{
+  line-height: 0.4;
+  margin-top: 8px;
+}
+.schedule-availabily-timetable p{
+  margin-bottom: 35px;
+}
+.schedule-availabily-emergency:hover, .schedule-availabily-timetable:hover,.schedule-availabily-opening:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
+}
+
+.schedule-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 15px;
+}
+.schedule-title-main{
+  font-size: 35px;
+  font-weight:625;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+.schedule-title-logo{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  
+}
+.schedule-title-logo-img{
+  height: 20px;
+  width: 65px;
+}
+.schedule-title-main-detail{
+  font-size: 17px;
+  font-weight:320;
+  margin-bottom: 20px;
+}
+.schedule-details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+}
+.schedule-details-emergency,.schedule-details-pharmecy,.schedule-details-treatment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  width: 300px;
+  text-align: center;
+}
+.schedule-details-emergency,.schedule-details-pharmecy{
+  padding-right: 70px;
+}
+.schedule-details-emergency-logo-img,.schedule-details-pharmecy-logo-img,.schedule-details-emergency-logo-img{
+  height: 40px;
+  width: 40px;
+  z-index: 2;
+  margin-left: 18px;
+  margin-top: 18px;
+}
+.schedule-details-emergency h2,.schedule-details-pharmecy h2,.schedule-details-treatment h2{
+  font-weight:600;
+  margin-top: 20px;
+}
+.schedule-details-emergency p,.schedule-details-pharmecy p,.schedule-details-treatment p{
+  font-weight:330;
+  margin-top: 5px;
+}
+.schedule-details-emergency-logo,.schedule-details-pharmecy-logo,.schedule-details-treatment-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  transition: background-color 0.3s ease;
+  
+}
+.schedule-details-treatment-logo-hover{
+  border-radius: 50%; /* Make it round */
+  width: 75px;
+  height: 75px;
+  transition: background-color 0.3s ease;
+  
+}
+.schedule-details-treatment-logo-hover:hover{
+  background-color: #B8CAD9;
+}
+
+@media screen and (max-width: 391px) {
+  .schedule-availabily {
+    flex-direction: column;
+    margin-top: 15px;
+    top: 0;
+    transform: none;
+  }
+
+  .schedule-availabily-emergency, .schedule-availabily-timetable, .schedule-availabily-opening {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: none;
+    min-width: none;
+    max-height: none;
+    min-height: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+  }
+  .schedule-availabily-opening-link{
+    
+    font-size: 19px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+  .schedule-availabily-emergency h2,.schedule-availabily-timetable h2, .schedule-availabily-opening h2 {
+      font-size: 23px;
+      font-weight: bold;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+      margin-top: 10px;
+    }
+  .schedule-availabily-emergency p,.schedule-availabily-timetable p, .schedule-availabily-opening p {
+      font-size: 19px;
+      font-weight: 400;
+    }
+    .schedule-availabily-timetable p{
+      margin-bottom: 20px;
+    }
+    .schedule-availabily-opening-time-days p,.schedule-availabily-opening-time-timing p{
+      line-height: 1;
+      
+    }
+    .schedule-availabily-opening h2 {
+      margin-bottom: 8px;
+    }
+    .schedule-availabily-opening-time-days-saturday{
+      margin-top: 35px;
+    }
+
+    .schedule-title-main{
+      font-size: 30px;
+      font-weight:625;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+    }
+   
+    .schedule-title-main-detail{
+      font-size: 22px;
+      font-weight:320;
+      margin-bottom: 20px;
+    }
+    .schedule-details{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      
+    }
+    .schedule-details-emergency,.schedule-details-pharmecy,.schedule-details-treatment{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 280px;
+      width: 300px;
+      text-align: center;
+    }
+    .schedule-details-treatment{
+      padding-right: 70px;
+    }
+    .schedule-details-emergency h2,.schedule-details-pharmecy h2,.schedule-details-treatment h2{
+      font-weight:600;
+      margin-top: 10px;
+    }
+    .schedule-details-emergency p,.schedule-details-pharmecy p,.schedule-details-treatment p{
+      font-size: 19px;
+    }
+
+}
+
+
+
+@media screen and (min-width: 392px) and (max-width: 767px) {
+  .schedule-availabily {
+    flex-direction: column;
+    margin-top: 15px;
+    top: 0;
+    transform: none;
+  }
+
+  .schedule-availabily-emergency, .schedule-availabily-timetable, .schedule-availabily-opening {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: none;
+    min-width: none;
+    max-height: none;
+    min-height: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+  }
+  .schedule-availabily-opening-link{
+    
+    font-size: 25px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+  .schedule-availabily-emergency h2,.schedule-availabily-timetable h2, .schedule-availabily-opening h2 {
+      font-size: 30px;
+      font-weight: bold;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+      margin-top: 10px;
+    }
+  .schedule-availabily-emergency p,.schedule-availabily-timetable p, .schedule-availabily-opening p {
+      font-size: 25px;
+      font-weight: 400;
+    }
+    .schedule-availabily-timetable p{
+      margin-bottom: 20px;
+    }
+
+    .schedule-title-main{
+      font-size: 30px;
+      font-weight:625;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+    }
+   
+    .schedule-title-main-detail{
+      font-size: 25px;
+      font-weight:320;
+      margin-bottom: 20px;
+    }
+  .schedule-details-emergency, .schedule-details-pharmecy, .schedule-details-treatment {
+    height: auto;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .schedule-details-emergency, .schedule-details-pharmecy {
+    padding-right: 8px;
+  }
+
+  .schedule-details-emergency-logo, .schedule-details-pharmecy-logo, .schedule-details-treatment-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .schedule-title {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .schedule-details-emergency-logo-img, .schedule-details-pharmecy-logo-img, .schedule-details-emergency-logo-img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .schedule-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    
+  }
+  .schedule-details-emergency,.schedule-details-pharmecy,.schedule-details-treatment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+  }
+  .schedule-details-treatment{
+    padding-right: 30px;
+  }
+  .schedule-details-emergency h2,.schedule-details-pharmecy h2,.schedule-details-treatment h2{
+    font-weight:600;
+    margin-top: 10px;
+  }
+
+  .schedule-details-emergency p,.schedule-details-pharmecy p,.schedule-details-treatment p{
+    font-size: 25px;
+  }
+  .schedule-details-emergency h2,.schedule-details-pharmecy h2,.schedule-details-treatment h2{
+    font-size: 31px;
+  
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .schedule-availabily {
+    flex-direction: column;
+    margin-top: 15px;
+    top: 0;
+    transform: none;
+  }
+
+  .schedule-availabily-emergency, .schedule-availabily-timetable, .schedule-availabily-opening {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: none;
+    min-width: none;
+    max-height: none;
+    min-height: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+  }
+  .schedule-availabily-opening-link{
+    
+    font-size: 25px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+  .schedule-availabily-emergency h2,.schedule-availabily-timetable h2, .schedule-availabily-opening h2 {
+      font-size: 30px;
+      font-weight: bold;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+      margin-top: 10px;
+    }
+  .schedule-availabily-emergency p,.schedule-availabily-timetable p, .schedule-availabily-opening p {
+      font-size: 25px;
+      font-weight: 400;
+    }
+    .schedule-availabily-timetable p{
+      margin-bottom: 20px;
+    }
+
+    .schedule-title-main{
+      font-size: 33px;
+      font-weight:625;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+    }
+   
+    .schedule-title-main-detail{
+      font-size: 28px;
+      font-weight:320;
+      margin-bottom: 20px;
+    }
+  .schedule-details-emergency, .schedule-details-pharmecy, .schedule-details-treatment {
+    height: auto;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .schedule-details-emergency, .schedule-details-pharmecy {
+    padding-right: 8px;
+  }
+
+  .schedule-details-emergency-logo, .schedule-details-pharmecy-logo, .schedule-details-treatment-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .schedule-title {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .schedule-details-emergency-logo-img, .schedule-details-pharmecy-logo-img, .schedule-details-emergency-logo-img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .schedule-details-emergency p,.schedule-details-pharmecy p,.schedule-details-treatment p{
+    font-size: 25px;
+  }
+  .schedule-details-emergency h2,.schedule-details-pharmecy h2,.schedule-details-treatment h2{
+    font-size: 31px;
+  
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1300px){
+  .schedule-availabily {
+    flex-direction: column;
+    margin-top: 15px;
+    top: 0;
+    transform: none;
+  }
+
+  .schedule-availabily-emergency, .schedule-availabily-timetable, .schedule-availabily-opening {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: none;
+    min-width: none;
+    max-height: none;
+    min-height: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+  }
+  .schedule-availabily-opening-link{
+    
+    font-size: 31px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+  .schedule-availabily-emergency h2,.schedule-availabily-timetable h2, .schedule-availabily-opening h2 {
+      font-size: 45px;
+      font-weight: bold;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+      margin-top: 10px;
+    }
+  .schedule-availabily-emergency p,.schedule-availabily-timetable p, .schedule-availabily-opening p,.schedule-availabily-opening-link {
+      font-size: 30px;
+      font-weight: 400;
+    }
+    .schedule-availabily-timetable p{
+      margin-bottom: 20px;
+    }
+
+    .schedule-title-main{
+      font-size: 45px;
+      font-weight:625;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+    }
+   
+    .schedule-title-main-detail{
+      font-size: 31px;
+      font-weight:320;
+      margin-bottom: 20px;
+    }
+  
+  .schedule-details-emergency p,.schedule-details-pharmecy p,.schedule-details-treatment p{
+    font-size: 30px;
+  }
+  .schedule-details-emergency h2,.schedule-details-pharmecy h2,.schedule-details-treatment h2{
+    font-size: 40px;
+  
+  }
+  .schedule-details-treatment h2,.schedule-details-treatment p{
+    margin-bottom: 40px;
+  }
+  .schedule-details{
+    margin-top: 10px;
+  }
+  .schedule-details-emergency,.schedule-details-pharmecy{
+    margin-top: 20px;
+  }
+}
+
+
+/* ---------
+whoweare
+--------- */
+.whoweare-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: var(--mainBackground);
+}
+.whoweare-div-deatails{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  
+  background-size: cover;
+  width: 100%;
+}
+.whoweare-div-deatails-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+z-index: 1;
+background-color: rgba(26, 118, 209, 0.8);
+width: 100%;
+height: 18rem;
+}
+.whoweare-div-deatails-room-logo-hover-img,.whoweare-div-deatails-docter-logo-hover-img,.whoweare-div-deatails-patient-logo-hover-img,.whoweare-div-deatails-experience-logo-hover-img{
+  height: 50px;
+  width: 50px;
+  z-index: 5;
+  margin-left: 14px;
+  margin-top: 18px;
+  padding-top: 5px;
+}
+.whoweare-div-deatails-patient-logo-hover-img,.whoweare-div-deatails-experience-logo-hover-img{
+  
+  margin-left: 14px;
+  margin-top: 28px;
+  padding-top: 5px;
+}
+.whoweare-div-deatails-experience-logo-hover-img{
+  
+  margin-top: 28px;
+  padding-top: 15px;
+}
+.whoweare-div-deatails-room,.whoweare-div-deatails-docter,.whoweare-div-deatails-patient,.whoweare-div-deatails-experience{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18vw;
+}
+.whoweare-div-deatails-room,.whoweare-div-deatails-docter,.whoweare-div-deatails-patient{
+  margin-right: 40px;
+}
+.whoweare-div-deatails-room-details,.whoweare-div-deatails-docter-details,.whoweare-div-deatails-patient-details,.whoweare-div-deatails-experience-details{
+  padding-left: 20px;
+  margin-top: 11px;
+}
+.whoweare-div-deatails-room-details-span,.whoweare-div-deatails-docter-details-span,.whoweare-div-deatails-patient-details-span,.whoweare-div-deatails-experience-details-span{
+  font-size: 28px;
+  font-weight:600;
+  margin-bottom: 5px;
+  color: var(--mainWhite);
+}
+.whoweare-div-deatails-room-details-p,.whoweare-div-deatails-docter-details-p,.whoweare-div-deatails-patient-details-p,.whoweare-div-deatails-experience-details-p{
+  font-size: 18px;
+  font-weight:400;
+  color: var(--mainWhite);
+}
+.whoweare-div-deatails-room-logo-hover,.whoweare-div-deatails-docter-logo-hover,.whoweare-div-deatails-patient-logo-hover,.whoweare-div-deatails-experience-logo-hover{
+  border-radius: 50%; /* Make it round */
+  
+  transform: translateY(-15%);
+  width: 75px;
+  height: 75px;
+  background-color: rgba(26, 118, 209, 0.5);
+  transition: background-color 0.3s ease;
+}
+.whoweare-div-deatails-room-logo-hover:hover,.whoweare-div-deatails-docter-logo-hover:hover,.whoweare-div-deatails-patient-logo-hover:hover,.whoweare-div-deatails-experience-logo-hover:hover{
+  
+  background-color: #8F9AF4;
+  transition: background-color 0.3s ease;
+}
+
+.whoweare-div-heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 30px;
+}
+.whoweare-div-heading-p{
+  font-size: 35px;
+  font-weight:625;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+.whoweare-div-heading-logo{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  
+}
+.whoweare-div-heading-logo-img{
+  height: 20px;
+  width: 65px;
+}
+.whoweare-div-heading-main-detail{
+  font-size: 17px;
+  font-weight:320;
+  
+}
+
+.whoweare-div-background{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+  padding-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.whoweare-div-background-details{
+  width: 50%;
+}
+.whoweare-div-background-details-p1{
+  font-size: 28px;
+  font-weight:625;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.whoweare-div-background-details-line{
+  height: 1.3px;
+  width: 100px;
+  border: 1.3px solid var(--blue);
+  margin-left: 15px;
+  margin-bottom:20px;
+}
+.whoweare-div-background-details-p2{
+  font-size: 16px;
+  font-weight:350;
+  padding-right: 25px;
+  margin-bottom: 10px;
+  padding-left: 2px;
+}
+.whoweare-div-background-details-points{
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+}
+.whoweare-div-background-details-points-one,.whoweare-div-background-details-points-two,.whoweare-div-background-details-points-three{
+  display: flex;
+  align-items: center;
+  
+ 
+}
+.whoweare-div-background-details-points-one p,.whoweare-div-background-details-points-two p,.whoweare-div-background-details-points-three p{
+  padding-left: 10px;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight:350;
+  
+}
+.whoweare-div-background-details-points-three-logo-img,.whoweare-div-background-details-points-two-logo-img,.whoweare-div-background-details-points-one-logo-img{
+  height: 20px;
+  width: 20px;
+}
+
+
+.whoweare-div-background-video{
+  height: 320px;
+  width: 50%;
+  background-size: cover;
+  
+}
+
+.promo-video-image {
+  margin-left: 0;
+  margin-top: 0;
+}
+.waves-block {
+  margin-left: 0;
+  margin-top: 0;
+}
+.promo-video {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.promo-video-image {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+
+.promo-video-image:hover {
+  transform: scale(1.2);
+}
+
+.waves-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 200px;
+  z-index: 0;
+}
+
+.waves-wave-1, .waves-wave-2, .waves-wave-3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--mainWhite);
+  opacity: 0;
+  border-radius: 50%;
+  animation: waves 3s ease-in-out infinite;
+}
+
+
+@keyframes waves {
+  0% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  
+  
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+  .whoweare-div-deatails-div {
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .whoweare-div-heading-logo-img{
+    height: 35px;
+    width: 90px;
+  }
+  .whoweare-div-deatails-room, .whoweare-div-deatails-docter, .whoweare-div-deatails-patient, .whoweare-div-deatails-experience {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .whoweare-div-background {
+    flex-direction: column;
+  }
+  .whoweare-div-background-details {
+    width: 100%;
+  }
+  .whoweare-div-background-video {
+    width: 100%;
+    height: 200px;
+  }
+  .promo-video-image {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .waves-block {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .promo-video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .promo-video-image {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+  }
+  
+  .promo-video-image:hover {
+    transform: scale(1.2);
+  }
+  
+  .waves-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    z-index: 0;
+  }
+  
+  .waves-wave-1, .waves-wave-2, .waves-wave-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainWhite);
+    opacity: 0;
+    border-radius: 50%;
+    animation: waves 3s ease-in-out infinite;
+  }
+  
+  
+  
+}
+
+@media screen and (min-width: 392px) and (max-width: 480px) {
+  .whoweare-div-background-details-p1{
+    font-size: 29px;
+  }
+.whoweare-div-heading-main-detail,.whoweare-div-background-details-p2{
+  font-size: 20px;
+}
+.whoweare-div-background-details-points-one p,.whoweare-div-background-details-points-two p,.whoweare-div-background-details-points-three p{
+  font-size: 20px;
+  
+}
+}
+
+@media screen and (min-width: 481px)and (max-width: 768px) {
+  
+  .whoweare-div-deatails-div {
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .whoweare-div-heading-logo-img{
+    height: 35px;
+    width: 90px;
+  }
+  .whoweare-div-deatails-room, .whoweare-div-deatails-docter, .whoweare-div-deatails-patient, .whoweare-div-deatails-experience {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .whoweare-div-background {
+    flex-direction: column;
+  }
+  .whoweare-div-background-details {
+    width: 100%;
+  }
+  .whoweare-div-background-video {
+    width: 100%;
+    height: 200px;
+  }
+  .promo-video-image {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .waves-block {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .promo-video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .promo-video-image {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+  }
+  
+  .promo-video-image:hover {
+    transform: scale(1.2);
+  }
+  
+  .waves-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    z-index: 0;
+  }
+  
+  .waves-wave-1, .waves-wave-2, .waves-wave-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainWhite);
+    opacity: 0;
+    border-radius: 50%;
+    animation: waves 3s ease-in-out infinite;
+  }
+  .whoweare-div-background-details-p1{
+    font-size: 29px;
+  }
+.whoweare-div-heading-main-detail,.whoweare-div-background-details-p2{
+  font-size: 20px;
+}
+.whoweare-div-background-details-points-one p,.whoweare-div-background-details-points-two p,.whoweare-div-background-details-points-three p{
+  font-size: 20px;
+  
+}
+  
+} 
+
+
+
+@media screen and (min-width: 769px)and (max-width: 1000px) {
+  .whoweare-div-heading-logo-img{
+    height: 45px;
+    width: 110px;
+  }
+  
+  .whoweare-div-background {
+    flex-direction: column;
+  }
+  .whoweare-div-background-details {
+    width: 100%;
+  }
+  .whoweare-div-background-video {
+    width: 100%;
+    height: 340px;
+  }
+  .promo-video-image {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .waves-block {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .promo-video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .promo-video-image {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+  }
+  
+  .promo-video-image:hover {
+    transform: scale(1.2);
+  }
+  
+  .waves-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    z-index: 0;
+  }
+  
+  .waves-wave-1, .waves-wave-2, .waves-wave-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainWhite);
+    opacity: 0;
+    border-radius: 50%;
+    animation: waves 3s ease-in-out infinite;
+  }
+  .whoweare-div-heading-p{
+    font-size: 36px;
+  }
+  .whoweare-div-background-details-p1{
+    font-size: 29px;
+  }
+.whoweare-div-heading-main-detail,.whoweare-div-background-details-p2{
+  font-size: 25px;
+}
+.whoweare-div-background-details-points-one p,.whoweare-div-background-details-points-two p,.whoweare-div-background-details-points-three p{
+  font-size: 25px;
+  
+}
+  
+} 
+
+
+@media screen and (min-width: 1001px)and (max-width: 1300px) {
+  .whoweare-div-deatails{
+    margin-top: 20px;
+  }
+  .whoweare-div-heading-logo-img{
+    height: 50px;
+    width: 125px;
+  }
+  .whoweare-div-background {
+    flex-direction: column;
+  }
+  .whoweare-div-background-details {
+    width: 100%;
+  }
+  .whoweare-div-background-video {
+    width: 100%;
+    height: 470px;
+  }
+  .promo-video-image {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .waves-block {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .promo-video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .promo-video-image {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+  }
+  
+  .promo-video-image:hover {
+    transform: scale(1.2);
+  }
+  
+  .waves-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    z-index: 0;
+  }
+  
+  .waves-wave-1, .waves-wave-2, .waves-wave-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainWhite);
+    opacity: 0;
+    border-radius: 50%;
+    animation: waves 3s ease-in-out infinite;
+  }
+  .whoweare-div-heading-p{
+    font-size: 42px;
+  }
+  .whoweare-div-background-details-p1{
+    font-size: 37px;
+  }
+.whoweare-div-heading-main-detail,.whoweare-div-background-details-p2{
+  font-size: 29px;
+}
+.whoweare-div-background-details-points-one p,.whoweare-div-background-details-points-two p,.whoweare-div-background-details-points-three p{
+  font-size: 29px;
+  
+}
+  
+} 
+
+
+/* Emergency */
+
+.emergency-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  
+  background-size: cover;
+  width: 100%;
+}
+.emergency-div-call{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+z-index: 1;
+background-color: rgba(26, 118, 209, 0.8);
+width:100%;
+height: 28rem;
+}
+
+.emergency-div-call-alignment{
+  width: 700px;
+  text-align: center;
+}
+.emergency-div-call-p1{
+  font-size: 40px;
+  font-weight:650;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  color: var(--mainWhite);
+}
+
+.emergency-div-call-p2{
+  padding-left: 10px;
+  margin-top: 15px;
+  font-size: 19px;
+  font-weight:400;
+  color: var(--mainWhite);
+}
+
+
+.emergency-div-call-alignment-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  
+}
+
+
+.emergency-div-call-alignment-btn-link1 {
+  text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    color: var(--mainWhite);
+    background: var(--primaryColor);
+    margin-right: 30px;
+    border: 2px solid  var(--mainWhite);
+    padding: 0.65rem 0.8rem;
+    display: inline-block;
+    transition: var(--mainTransition);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--mainBorderRadius);
+    transition: transform 0.3s ease;
+    
+}
+
+.emergency-div-call-alignment-btn-link2{
+  text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    color: var(--mainWhite);
+    background: var(--primaryColor);
+    margin-right: 30px;
+    border: 2px solid  var(--mainWhite);
+    padding: 0.45rem 0.8rem;
+    display: inline-block;
+    transition: var(--mainTransition);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--mainBorderRadius);
+    transition: transform 0.3s ease;
+    margin-left: 7px;
+}
+
+.emergency-div-call-alignment-btn-link1:hover {
+  color: var(--mainWhite);
+  background-color:var(--blue);
+  transform: scale(1.1);
+}
+
+
+.emergency-div-call-alignment-btn-link2:hover {
+  color: var(--mainWhite);
+  background-color:var(--blue);
+  transform: scale(1.1);
+}
+
+.emergency-div-call-alignment-btn-link2-arrow{
+  height: 25px;
+ width: 25px; 
+ 
+}
+
+@media screen and (max-width: 391px) {
+  .emergency-div {
+  background-size: cover;
+  width: 100%;
+  margin-top: 15px;
+  
+  }
+  .emergency-div-call{
+  left: 5px; 
+  right:5px;
+  max-width: calc(100% - 0px);
+  height: auto;
+  padding: 1rem 1rem;
+  padding-bottom: 3rem; 
+  padding-top: 2rem;
+  }
+  .emergency-div-call-alignment {
+    width: 90%;
+    text-align: center;
+  }
+  .emergency-div-call-p1{
+    font-size: 30px;
+  }
+  .emergency-div-call-p2{
+    font-size: 17px;
+  }
+  .emergency-div-call-alignment-btn {
+    flex-direction: column;
+    margin-top: 1.5rem;
+  }
+  .emergency-div-call-alignment-btn-link1,
+  .emergency-div-call-alignment-btn-link2 {
+    margin: 0.9rem 0;
+    width: auto;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 392px) and (max-width: 767px) {
+  .emergency-div {
+  background-size: cover;
+  width: 100%;
+  margin-top: 15px;
+  
+  }
+  .emergency-div-call{
+  left: 5px; 
+  right:5px;
+  max-width: calc(100% - 0px);
+  height: auto;
+  padding: 1rem 1rem;
+  padding-bottom: 3rem; 
+  padding-top: 2rem;
+  }
+  .emergency-div-call-alignment {
+    width: 90%;
+    text-align: center;
+  }
+  .emergency-div-call-p1{
+    font-size: 34px;
+  }
+  .emergency-div-call-p2{
+    font-size: 19px;
+  }
+  .emergency-div-call-alignment-btn {
+    flex-direction: column;
+    margin-top: 1.5rem;
+  }
+  .emergency-div-call-alignment-btn-link1,
+  .emergency-div-call-alignment-btn-link2 {
+    margin: 1.1rem 0;
+    width: auto;
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  
+  .emergency-div-call{
+  left: 5px; 
+  right:5px;
+  max-width: calc(100% - 0px);
+  height: auto;
+  padding: 0.5rem 0.5rem;
+  padding-bottom: 3rem; 
+  padding-top: 3rem;
+  }
+  .emergency-div-call-alignment {
+    width: 90%;
+    text-align: center;
+  }
+  .emergency-div-call-p1{
+    font-size: 50px;
+    margin-bottom: 45px;
+  }
+  .emergency-div-call-p2{
+    font-size: 30px;
+  }
+  
+  .emergency-div-call-alignment-btn-link1,
+  .emergency-div-call-alignment-btn-link2 {
+    margin: 1.1rem 1.5rem;
+    width: auto;
+    font-size: 31px;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+  
+  .emergency-div-call{
+    left: 5px; 
+    right:5px;
+    max-width: calc(100% - 0px);
+    height: auto;
+    padding: 0.5rem 0.5rem;
+    padding-bottom: 3rem; 
+    padding-top: 3rem;
+    }
+    .emergency-div-call-alignment {
+      width: 90%;
+      text-align: center;
+    }
+  .emergency-div-call-p1{
+    font-size: 55px;
+    margin-bottom: 45px;
+  }
+  .emergency-div-call-p2{
+    font-size: 33px;
+  }
+  
+  .emergency-div-call-alignment-btn-link1,
+  .emergency-div-call-alignment-btn-link2 {
+    margin: 1.1rem 1.5rem;
+    width: auto;
+    font-size: 34px;
+  }
+}
+
+
+/* CleanlinessRules */
+
+
+.cleanlinessrules-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: var(--mainBackground);
+}
+
+.cleanlinessrules-div-heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 30px;
+}
+.cleanlinessrules-div-heading-p{
+  font-size: 35px;
+  font-weight:649;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+.cleanlinessrules-div-heading-logo{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  
+}
+.cleanlinessrules-div-heading-logo-img{
+  height: 20px;
+  width: 65px;
+}
+.cleanlinessrules-div-heading-main-detail{
+  font-size: 17px;
+  font-weight:400;
+  
+}
+
+.cleanlinessrules-div-details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.cleanlinessrules-div-details-slide{
+  width: 21%;
+  height: 300px;
+  margin-right: 28px;
+}
+.cleanlinessrules-div-details-slide{
+  position:relative;
+}
+
+.cleanlinessrules-div-details-slide-img{
+  height: 100%;
+  width: 100%;
+  
+}
+
+
+.cleanlinessrules-div-details-slide:before{
+  position:absolute;
+	content:"";
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	background:#1a76d1;
+	opacity:0;
+	visibility:hidden;
+	-webkit-transition:all 0.4s ease;
+	-moz-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+	z-index:1;
+}
+
+.cleanlinessrules-div-details-slide:hover:before{
+	opacity:0.7;
+	visibility:visible;
+  transform: scale(1.03);
+}
+
+.cleanlinessrules-div-details-slide-btn{
+  color: #1a76d1;
+	z-index: 9;
+	background: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	border-radius: 0px;
+	opacity: 0;
+	
+	
+	transition: all 0.4s ease;
+	height: 48px;
+	width: 150px;
+	text-align: center;
+	line-height: 48px;
+	padding: 0;
+	font-weight: 600;
+	font-size: 17px;
+	margin-left: -75px;
+	margin-top: -24px;
+	border-radius:4px;
+}
+
+
+
+
+.cleanlinessrules-div-details-slide-btn:hover {
+  opacity:1;
+	visibility:visible;
+  color:var(--blue);
+  background-color: #51EFE5;
+  z-index: 9;
+}
+.cleanlinessrules-div-details-slide:hover .cleanlinessrules-div-details-slide-btn {
+  opacity: 1;
+  visibility: visible;
+  color: var(--mainBlack);
+}
+
+@media screen and (max-width: 391px) {
+  .cleanlinessrules-div {
+    padding: 2rem 1rem;
+  }
+  .cleanlinessrules-div-heading {
+    max-width: 90%;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .cleanlinessrules-div-heading-p{
+    font-size: 33px;
+    margin-bottom: 20px;
+  }
+  .cleanlinessrules-div-details {
+    flex-direction: column;
+  }
+  .cleanlinessrules-div-details-slide{
+    width: 83%;
+    margin-bottom: 22px;
+  }
+}
+
+@media screen and (min-width: 392px) and (max-width: 767px)  {
+  .cleanlinessrules-div {
+    padding: 2rem 1rem;
+  }
+  .cleanlinessrules-div-heading {
+    max-width: 90%;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .cleanlinessrules-div-heading-p{
+    font-size: 37px;
+    margin-bottom: 20px;
+  }
+  .cleanlinessrules-div-heading-logo-img{
+    height: 35px;
+    width: 90px;
+  }
+  .cleanlinessrules-div-heading-main-detail{
+    font-size: 22px;
+  }
+  .cleanlinessrules-div-details {
+    flex-direction: column;
+  }
+  .cleanlinessrules-div-details-slide{
+    width: 83%;
+    margin-bottom: 22px;
+  }
+  .cleanlinessrules-div-details-slide-btn{
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .cleanlinessrules-div {
+    padding: 2rem 1rem;
+  }
+  .cleanlinessrules-div-heading {
+    max-width: 90%;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .cleanlinessrules-div-heading-p{
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  .cleanlinessrules-div-heading-logo-img{
+    height: 45px;
+    width: 110px;
+  }
+  .cleanlinessrules-div-heading-main-detail{
+    font-size: 30px;
+  }
+  .cleanlinessrules-div-details {
+    flex-direction: column;
+  }
+  .cleanlinessrules-div-details-slide{
+    width: 83%;
+    margin-bottom: 22px;
+  }
+  .cleanlinessrules-div-details-slide-btn{
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+  .cleanlinessrules-div {
+    padding: 2rem 1rem;
+  }
+  .cleanlinessrules-div-heading {
+    max-width: 90%;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .cleanlinessrules-div-heading-p{
+    font-size: 55px;
+    margin-bottom: 20px;
+  }
+  .cleanlinessrules-div-heading-logo-img{
+    height: 50px;
+    width: 125px;
+  }
+  .cleanlinessrules-div-heading-main-detail{
+    font-size: 33px;
+  }
+  .cleanlinessrules-div-details {
+    flex-wrap: wrap; 
+  }
+  .cleanlinessrules-div-details-slide{
+    width: 40%;
+    margin-bottom: 22px;
+  }
+  .cleanlinessrules-div-details-slide-btn{
+    font-size: 24px;
+  }
+}
+
+
+/* Services */
+
+.services-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: var(--mainGrey);
+}
+
+.services-div-heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 30px;
+}
+.services-div-heading-p{
+  font-size: 35px;
+  font-weight:649;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+.services-div-heading-logo{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  
+}
+.services-div-heading-logo-img{
+  height: 20px;
+  width: 65px;
+}
+.services-div-heading-main-detail{
+  font-size: 17px;
+  font-weight:400;
+  
+}
+
+.services-div-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+.services-div-details-top, .services-div-details-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--fullWidth);
+  margin-bottom: 30px;
+}
+
+.services-div-details-top-General-Treatment-logo-img,.services-div-details-top-Teeth-Whitening-logo-img,.services-div-details-top-Heart-Surgery-logo-img,.services-div-details-bottom-Ear-Treatment-logo-img,.services-div-details-bottom-Vision-Problems-logo-img,.services-div-details-bottom-Blood-Transfusion-logo-img{
+  width: 55px;
+  height: 55px;
+}
+
+.services-div-details-top-General-Treatment,.services-div-details-top-Teeth-Whitening,.services-div-details-top-Heart-Surgery,.services-div-details-bottom-Ear-Treatment,.services-div-details-bottom-Vision-Problems,.services-div-details-bottom-Blood-Transfusion{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 60px;
+  max-width: 330px;
+}
+
+.services-div-details-top-General-Treatment-deatils,.services-div-details-top-Teeth-Whitening-deatils,.services-div-details-top-Heart-Surgery-deatils,.services-div-details-bottom-Ear-Treatment-deatils,.services-div-details-bottom-Vision-Problems-deatils,.services-div-details-bottom-Blood-Transfusion-deatils{
+  margin-left: 20px;
+}
+
+
+
+.services-div-details-top-General-Treatment-deatils-p1,.services-div-details-top-Teeth-Whitening-deatils-p1,.services-div-details-top-Heart-Surgery-deatils-p1,.services-div-details-bottom-Ear-Treatment-deatils-p1,.services-div-details-bottom-Vision-Problems-deatils-p1,.services-div-details-bottom-Blood-Transfusion-deatils-p1{
+  font-size: 22px;
+  font-weight:649;
+  text-transform: capitalize;
+  margin-bottom: 7px;
+  transition: transform 0.3s ease;
+}
+.services-div-details-top-General-Treatment-deatils-p2,.services-div-details-top-Teeth-Whitening-deatils-p2,.services-div-details-top-Heart-Surgery-deatils-p2,.services-div-details-bottom-Ear-Treatment-deatils-p2,.services-div-details-bottom-Vision-Problems-deatils-p2,.services-div-details-bottom-Blood-Transfusion-deatils-p2{
+  font-size: 14px;
+  font-weight:399;
+  margin-bottom: 3px;
+}
+
+.services-div-details-top-General-Treatment-deatils-p1:hover,.services-div-details-top-Teeth-Whitening-deatils-p1:hover,.services-div-details-top-Heart-Surgery-deatils-p1:hover,.services-div-details-bottom-Ear-Treatment-deatils-p1:hover,.services-div-details-bottom-Vision-Problems-deatils-p1:hover,.services-div-details-bottom-Blood-Transfusion-deatils-p1:hover{
+  color: var(--blue);
+  transform: scale(1.03);
+}
+
+@media screen and (max-width: 391px) {
+  .services-div{
+    padding: 1rem 1rem;
+  }
+  .services-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+  }
+  .services-div-heading-p{
+    font-size: 30px;
+  }
+  .services-div-details-top,
+.services-div-details-bottom {
+  flex-direction: column;
+  margin-right: 0; 
+  max-width: 99%; 
+  margin-bottom: 0px;
+}
+.services-div-details-bottom {
+  margin-bottom: 15px;
+}
+.services-div-details-top-General-Treatment,.services-div-details-top-Teeth-Whitening,.services-div-details-top-Heart-Surgery,.services-div-details-bottom-Ear-Treatment,.services-div-details-bottom-Vision-Problems,.services-div-details-bottom-Blood-Transfusion{
+  max-width: 93%;
+  margin-bottom: 15px;
+}
+.services-div-details-top-General-Treatment-deatils-p2,.services-div-details-top-Teeth-Whitening-deatils-p2,.services-div-details-top-Heart-Surgery-deatils-p2,.services-div-details-bottom-Ear-Treatment-deatils-p2,.services-div-details-bottom-Vision-Problems-deatils-p2,.services-div-details-bottom-Blood-Transfusion-deatils-p2{
+  font-size: 17px;
+}
+.services-div-details-top-General-Treatment-deatils-p1,.services-div-details-top-Teeth-Whitening-deatils-p1,.services-div-details-top-Heart-Surgery-deatils-p1,.services-div-details-bottom-Ear-Treatment-deatils-p1,.services-div-details-bottom-Vision-Problems-deatils-p1,.services-div-details-bottom-Blood-Transfusion-deatils-p1{
+  font-size: 23px;
+}
+}
+
+@media screen and (min-width: 392px) and (max-width: 768px)  {
+  .services-div{
+    padding: 1rem 1rem;
+  }
+  .services-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+  }
+  .services-div-heading-p{
+    font-size: 35px;
+  }
+  .services-div-heading-logo-img{
+    height: 35px;
+    width: 90px;
+  }
+  .services-div-heading-main-detail{
+    font-size: 22px;
+  }
+  .services-div-details-top,
+.services-div-details-bottom {
+  flex-direction: column;
+  margin-right: 0; 
+  max-width: 99%; 
+  margin-bottom: 0px;
+}
+.services-div-details-bottom {
+  margin-bottom: 15px;
+}
+.services-div-details-top-General-Treatment,.services-div-details-top-Teeth-Whitening,.services-div-details-top-Heart-Surgery,.services-div-details-bottom-Ear-Treatment,.services-div-details-bottom-Vision-Problems,.services-div-details-bottom-Blood-Transfusion{
+  max-width: 93%;
+  margin-bottom: 19px;
+}
+.services-div-details-top-General-Treatment-deatils-p2,.services-div-details-top-Teeth-Whitening-deatils-p2,.services-div-details-top-Heart-Surgery-deatils-p2,.services-div-details-bottom-Ear-Treatment-deatils-p2,.services-div-details-bottom-Vision-Problems-deatils-p2,.services-div-details-bottom-Blood-Transfusion-deatils-p2{
+  font-size: 22px;
+}
+.services-div-details-top-General-Treatment-deatils-p1,.services-div-details-top-Teeth-Whitening-deatils-p1,.services-div-details-top-Heart-Surgery-deatils-p1,.services-div-details-bottom-Ear-Treatment-deatils-p1,.services-div-details-bottom-Vision-Problems-deatils-p1,.services-div-details-bottom-Blood-Transfusion-deatils-p1{
+  font-size: 28px;
+}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px)  {
+  .services-div{
+    padding: 1rem 1rem;
+  }
+  .services-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+  }
+  .services-div-heading-p{
+    font-size: 48px;
+  }
+  .services-div-heading-logo-img{
+    height: 45px;
+    width: 110px;
+  }
+  .services-div-heading-main-detail{
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .services-div-details-top,
+.services-div-details-bottom {
+  flex-direction: column;
+  margin-right: 0; 
+  max-width: 99%; 
+  margin-bottom: 0px;
+}
+.services-div-details-bottom {
+  margin-bottom: 15px;
+}
+.services-div-details-top-General-Treatment,.services-div-details-top-Teeth-Whitening,.services-div-details-top-Heart-Surgery,.services-div-details-bottom-Ear-Treatment,.services-div-details-bottom-Vision-Problems,.services-div-details-bottom-Blood-Transfusion{
+  max-width: 93%;
+  margin-bottom: 19px;
+}
+.services-div-details-top-General-Treatment-deatils-p2,.services-div-details-top-Teeth-Whitening-deatils-p2,.services-div-details-top-Heart-Surgery-deatils-p2,.services-div-details-bottom-Ear-Treatment-deatils-p2,.services-div-details-bottom-Vision-Problems-deatils-p2,.services-div-details-bottom-Blood-Transfusion-deatils-p2{
+  font-size: 28px;
+}
+.services-div-details-top-General-Treatment-deatils-p1,.services-div-details-top-Teeth-Whitening-deatils-p1,.services-div-details-top-Heart-Surgery-deatils-p1,.services-div-details-bottom-Ear-Treatment-deatils-p1,.services-div-details-bottom-Vision-Problems-deatils-p1,.services-div-details-bottom-Blood-Transfusion-deatils-p1{
+  font-size: 34px;
+}
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1300px)  {
+  .services-div{
+    padding: 1rem 1rem;
+  }
+  .services-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+  }
+  .services-div-heading-p{
+    font-size: 58px;
+  }
+  .services-div-heading-logo-img{
+    height: 50px;
+    width: 125px;
+  }
+  .services-div-heading-main-detail{
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .services-div-details-top,
+.services-div-details-bottom {
+  flex-direction: column;
+  margin-right: 0; 
+  max-width: 99%; 
+  margin-bottom: 0px;
+}
+.services-div-details-bottom {
+  margin-bottom: 15px;
+}
+.services-div-details-top-General-Treatment,.services-div-details-top-Teeth-Whitening,.services-div-details-top-Heart-Surgery,.services-div-details-bottom-Ear-Treatment,.services-div-details-bottom-Vision-Problems,.services-div-details-bottom-Blood-Transfusion{
+  max-width: 93%;
+  margin-bottom: 19px;
+}
+.services-div-details-top-General-Treatment-deatils-p2,.services-div-details-top-Teeth-Whitening-deatils-p2,.services-div-details-top-Heart-Surgery-deatils-p2,.services-div-details-bottom-Ear-Treatment-deatils-p2,.services-div-details-bottom-Vision-Problems-deatils-p2,.services-div-details-bottom-Blood-Transfusion-deatils-p2{
+  font-size: 33px;
+}
+.services-div-details-top-General-Treatment-deatils-p1,.services-div-details-top-Teeth-Whitening-deatils-p1,.services-div-details-top-Heart-Surgery-deatils-p1,.services-div-details-bottom-Ear-Treatment-deatils-p1,.services-div-details-bottom-Vision-Problems-deatils-p1,.services-div-details-bottom-Blood-Transfusion-deatils-p1{
+  font-size: 43px;
+}
+}
+
+
+/* Price */
+
+.price-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color:#FBFBFB;
+}
+
+.price-div-heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 30px;
+}
+.price-div-heading-p{
+  font-size: 35px;
+  font-weight:649;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+.price-div-heading-logo{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  
+}
+.price-div-heading-logo-img{
+  height: 20px;
+  width: 65px;
+}
+.price-div-heading-main-detail{
+  font-size: 17px;
+  font-weight:400;
+  
+}
+
+.price-div-deatils{
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+  margin-bottom: 35px;
+}
+.price-div-deatils-Plastic-Suggery,.price-div-deatils-Teeth-Whitening,.price-div-deatils-Heart-Suggery{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 330px;
+  margin-right: 60px;
+  margin-top: 60px;
+  border-radius: 5px;
+  border:  2.3px solid var(--mainGrey);
+  background-color: var(--mainWhite);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.65);
+  transition:all 0.4s ease;
+}
+.price-div-deatils-Plastic-Suggery:hover,.price-div-deatils-Teeth-Whitening:hover,.price-div-deatils-Heart-Suggery:hover{
+  transform: scale(1.03);
+}
+
+
+.price-div-deatils-Plastic-Suggery-logo,.price-div-deatils-Teeth-Whitening-logo,.price-div-deatils-Heart-Suggery-logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+.price-div-deatils-Plastic-Suggery-logo-img,.price-div-deatils-Teeth-Whitening-logo-img,.price-div-deatils-Heart-Suggery-logo-img{
+  margin-bottom: 18px;
+}
+
+
+.price-div-deatils-Plastic-Suggery-logo-h2,.price-div-deatils-Teeth-Whitening-logo-h2,.price-div-deatils-Heart-Suggery-logo-h2{
+  font-size: 24px;
+  font-weight:649;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.price-div-deatils-Plastic-Suggery-logo-img-pic,.price-div-deatils-Teeth-Whitening-logo-img-pic,.price-div-deatils-Heart-Suggery-logo-img-pic{
+  width: 70px;
+  height: 70px;
+}
+
+
+
+.price-div-deatils-Heart-Suggery-logo-p,.price-div-deatils-Teeth-Whitening-logo-p,.price-div-deatils-Plastic-Suggery-logo-p{
+  font-size: 29px;
+  font-weight:650;
+  color: var(--blue);
+}
+
+.price-div-deatils-Heart-Suggery-logo-p-span,.price-div-deatils-Teeth-Whitening-logo-p-span,.price-div-deatils-Plastic-Suggery-logo-p-span{
+  font-size: 16px;
+  font-weight:400;
+  color: var(--mainBlack);
+}
+
+.price-div-deatils-Plastic-Suggery-details-img-pic,.price-div-deatils-Teeth-Whitening-details-img-pic,.price-div-deatils-Heart-Suggery-details-img-pic{
+  width: 25px;
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+.price-div-deatils-Plastic-Suggery-details,.price-div-deatils-Teeth-Whitening-details,.price-div-deatils-Heart-Suggery-details{
+  display: flex;
+  align-items: center;
+  
+}
+.price-div-deatils-Heart-Suggery-details-desc,.price-div-deatils-Teeth-Whitening-details-desc,.price-div-deatils-Plastic-Suggery-details-desc{
+  margin-right: 20px;
+}
+
+.price-div-deatils-Heart-Suggery-details-desc p,.price-div-deatils-Teeth-Whitening-details-desc p,.price-div-deatils-Plastic-Suggery-details-desc p{
+  font-size: 16px;
+  font-weight:400;
+  color: var(--mainBlack);
+  margin-bottom: 7px;
+}
+
+.price-div-deatils-Heart-Suggery-button,.price-div-deatils-Plastic-Suggery-button,.price-div-deatils-Teeth-Whitening-button,.price-div-deatils-Plastic-Suggery-button{
+  display:inline-block;
+}
+
+
+.price-div-deatils-Heart-Suggery-button-link,.price-div-deatils-Teeth-Whitening-button-link,.price-div-deatils-Plastic-Suggery-button-link{
+  text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    color: white;
+    background: var(--blue);
+    margin: 0 auto;
+    border: 2px solid var(--blue);
+    padding: 0.45rem 0.8rem;
+    display: inline-block;
+    transition: var(--mainTransition);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--mainBorderRadius);
+    transition: transform 0.5s ease;
+    text-align: center;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.price-div-deatils-Heart-Suggery-button-link:hover ,.price-div-deatils-Teeth-Whitening-button-link:hover,.price-div-deatils-Plastic-Suggery-button-link:hover {
+  border: 2px solid var(--primaryColor);
+  background-color:var(--primaryColor);
+  transform: scale(1.05);
+}
+@media screen and (max-width: 335px){
+  .price-div-deatils-Plastic-Suggery,
+  .price-div-deatils-Teeth-Whitening,
+  .price-div-deatils-Heart-Suggery {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 389px) {
+  .price-div{
+    padding: 1rem 1rem;
+    
+  }
+  .price-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .price-div-heading-p{
+    font-size: 30px;
+  }
+  .price-div-deatils{
+    
+    flex-direction: column;
+  }
+  .price-div-deatils-Plastic-Suggery,
+  .price-div-deatils-Teeth-Whitening,
+  .price-div-deatils-Heart-Suggery {
+    
+    margin-top: 20px;
+    margin-right: 0; 
+    margin-bottom: 0px; 
+  }
+}
+
+@media screen and (min-width: 390px) and (max-width: 767px){
+  .price-div{
+    padding: 1rem 1rem;
+  }
+  .price-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .price-div-heading-p{
+    font-size: 35px;
+  }
+  .price-div-heading-logo-img{
+    height: 35px;
+    width: 90px;
+  }
+  .price-div-heading-main-detail{
+    font-size: 22px;
+  }
+  .price-div-deatils{
+    
+    flex-direction: column;
+  }
+  .price-div-deatils-Plastic-Suggery,
+  .price-div-deatils-Teeth-Whitening,
+  .price-div-deatils-Heart-Suggery {
+   width: 370px;
+    margin-top: 20px;
+    margin-right: 0; 
+    margin-bottom: 0px; 
+  }
+  .price-div-deatils-Plastic-Suggery-logo-h2,.price-div-deatils-Teeth-Whitening-logo-h2,.price-div-deatils-Heart-Suggery-logo-h2{
+    font-size: 28px;
+  }
+  .price-div-deatils-Heart-Suggery-logo-p,.price-div-deatils-Teeth-Whitening-logo-p,.price-div-deatils-Plastic-Suggery-logo-p{
+    font-size: 30px;
+  }
+  .price-div-deatils-Heart-Suggery-logo-p-span,.price-div-deatils-Teeth-Whitening-logo-p-span,.price-div-deatils-Plastic-Suggery-logo-p-span{
+    font-size: 22px;
+  }
+  .price-div-deatils-Heart-Suggery-details-desc p,.price-div-deatils-Teeth-Whitening-details-desc p,.price-div-deatils-Plastic-Suggery-details-desc p{
+    font-size: 22px;
+  }
+  .price-div-deatils-Plastic-Suggery-details-img-pic,.price-div-deatils-Teeth-Whitening-details-img-pic,.price-div-deatils-Heart-Suggery-details-img-pic{
+    margin-bottom: 12px;
+  }
+  .price-div-deatils-Heart-Suggery-button-link,.price-div-deatils-Teeth-Whitening-button-link,.price-div-deatils-Plastic-Suggery-button-link{
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px){
+  .price-div{
+    padding: 1rem 1rem;
+  }
+  .price-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .price-div-heading-p{
+    font-size: 48px;
+  }
+  .price-div-heading-logo-img{
+    height: 45px;
+    width: 110px;
+  }
+  .price-div-heading-main-detail{
+    font-size: 30px;
+  }
+  .price-div-deatils{
+    
+    flex-direction: column;
+  }
+  .price-div-deatils-Plastic-Suggery,
+  .price-div-deatils-Teeth-Whitening,
+  .price-div-deatils-Heart-Suggery {
+   width: 590px;
+    margin-top: 35px;
+    margin-right: 0; 
+    margin-bottom: 35px; 
+    border:  3.5px solid var(--mainGrey);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.65);
+  }
+  .price-div-deatils-Plastic-Suggery-logo-h2,.price-div-deatils-Teeth-Whitening-logo-h2,.price-div-deatils-Heart-Suggery-logo-h2{
+    font-size: 38px;
+  }
+  .price-div-deatils-Heart-Suggery-logo-p,.price-div-deatils-Teeth-Whitening-logo-p,.price-div-deatils-Plastic-Suggery-logo-p{
+    font-size: 43px;
+  }
+  .price-div-deatils-Heart-Suggery-logo-p-span,.price-div-deatils-Teeth-Whitening-logo-p-span,.price-div-deatils-Plastic-Suggery-logo-p-span{
+    font-size: 28px;
+  }
+  .price-div-deatils-Heart-Suggery-details-desc p,.price-div-deatils-Teeth-Whitening-details-desc p,.price-div-deatils-Plastic-Suggery-details-desc p{
+    font-size: 29px;
+  }
+  .price-div-deatils-Plastic-Suggery-details-img-pic,.price-div-deatils-Teeth-Whitening-details-img-pic,.price-div-deatils-Heart-Suggery-details-img-pic{
+    margin-bottom: 12px;
+    width: 35px;
+    height: 35px;
+  }
+  .price-div-deatils-Heart-Suggery-button-link,.price-div-deatils-Teeth-Whitening-button-link,.price-div-deatils-Plastic-Suggery-button-link{
+    font-size: 29px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1300px){
+  .price-div{
+    padding: 1rem 1rem;
+  }
+  .price-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .price-div-heading-p{
+    font-size: 65px;
+  }
+  .price-div-heading-logo-img{
+    height: 50px;
+    width: 125px;
+  }
+  .price-div-heading-main-detail{
+    font-size: 36px;
+  }
+  .price-div-deatils{
+    
+    flex-direction: column;
+  }
+  .price-div-deatils-Plastic-Suggery,
+  .price-div-deatils-Teeth-Whitening,
+  .price-div-deatils-Heart-Suggery {
+   width: 750px;
+    margin-top: 35px;
+    margin-right: 0; 
+    margin-bottom: 35px; 
+    border:  3.5px solid var(--mainGrey);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.65);
+  }
+  .price-div-deatils-Plastic-Suggery-logo-h2,.price-div-deatils-Teeth-Whitening-logo-h2,.price-div-deatils-Heart-Suggery-logo-h2{
+    font-size: 43px;
+  }
+  .price-div-deatils-Heart-Suggery-logo-p,.price-div-deatils-Teeth-Whitening-logo-p,.price-div-deatils-Plastic-Suggery-logo-p{
+    font-size: 47px;
+  }
+  .price-div-deatils-Heart-Suggery-logo-p-span,.price-div-deatils-Teeth-Whitening-logo-p-span,.price-div-deatils-Plastic-Suggery-logo-p-span{
+    font-size: 33px;
+  }
+  .price-div-deatils-Heart-Suggery-details-desc p,.price-div-deatils-Teeth-Whitening-details-desc p,.price-div-deatils-Plastic-Suggery-details-desc p{
+    font-size: 35px;
+  }
+  .price-div-deatils-Plastic-Suggery-details-img-pic,.price-div-deatils-Teeth-Whitening-details-img-pic,.price-div-deatils-Heart-Suggery-details-img-pic{
+    margin-bottom: 15px;
+    width: 45px;
+    height: 40px;
+  }
+  .price-div-deatils-Heart-Suggery-button-link,.price-div-deatils-Teeth-Whitening-button-link,.price-div-deatils-Plastic-Suggery-button-link{
+    font-size: 29px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
+}
+
+
+
+
+
+/* News */
+
+.news-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color:#E9EAE2;
+  
+}
+
+.news-div-heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 30px;
+}
+.news-div-heading-p{
+  font-size: 35px;
+  font-weight:649;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+.news-div-heading-logo{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  
+}
+.news-div-heading-logo-img{
+  height: 20px;
+  width: 65px;
+}
+.news-div-heading-main-detail{
+  font-size: 17px;
+  font-weight:400;
+  
+}
+
+
+.news-div-details{
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+  margin-bottom: 35px;
+}
+.news-div-details-div1,.news-div-details-div2,.news-div-details-div3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 330px;
+  margin-right: 60px;
+  margin-top: 60px;
+  border-radius: 5px;
+  background-color: var(--mainWhite);
+  transition:all 0.4s ease;
+  position: relative;
+}
+
+.news-div-details-div1:hover::after,.news-div-details-div2:hover::after,.news-div-details-div3:hover:after{
+  content: "";
+  position: absolute; 
+  bottom: 0; 
+  left: 2;
+  width: 95%; 
+  height: 3px; 
+  background-color: var(--blue); 
+  
+  
+}
+.news-div-details-div1:hover,.news-div-details-div2:hover,.news-div-details-div3:hover{
+  transform: scale(1.013);
+  
+  
+}
+
+.news-div-details-div1-logo,.news-div-details-div2-logo,.news-div-details-div3-logo{
+  height: 50%;
+}
+
+.news-div-details-div1-desc,.news-div-details-div2-desc,.news-div-details-div3-desc{
+  display: flex;
+  flex-direction: column;
+  margin-left: 22px;
+  margin-top: 25px;
+}
+
+.news-div-details-div1-desc-h2,.news-div-details-div2-desc-h2,.news-div-details-div3-desc-h2{
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    color: white;
+    background: var(--backgroundblue);
+    border: 2px solid var(--blue);
+    padding: 0.25rem 0.45rem;
+    display: inline-block;
+    transition: var(--mainTransition);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: var(--mainBorderRadius);
+    text-align: center;
+    width: 145px;
+    margin-bottom: 18px;
+}
+
+.news-div-details-div3-desc-p1,.news-div-details-div2-desc-p1,.news-div-details-div1-desc-p1{
+    font-size: 23px;
+    font-weight: 649;
+    line-height: 33px;
+    color:var(--mainBlack);
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.news-div-details-div3-desc-p1:hover,.news-div-details-div2-desc-p1:hover,.news-div-details-div1-desc-p1:hover{
+    
+    color:var(--blue);
+    
+}
+.news-div-details-div3-desc-p2,.news-div-details-div2-desc-p2,.news-div-details-div1-desc-p2{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color:var(--mainBlack);
+    letter-spacing: 0.2px;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 361px){
+.news-div-details-div1,.news-div-details-div2,.news-div-details-div3{
+width: 100%;
+margin: 0 auto;
+margin-bottom: 20px;
+}
+}
+
+@media screen and (max-width: 391px) {
+  .news-div{
+    padding: 1rem 1rem;
+    
+  }
+  .news-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .news-div-heading-p{
+    font-size: 30px;
+  }
+  .news-div-details{
+    
+    flex-direction: column;
+  }
+  .news-div-details-div1{
+    margin-top: 10px;
+  }
+  .news-div-details-div2,.news-div-details-div3{
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 385px)  and (max-width: 391px){
+  .news-div-heading-p{
+    font-size: 35px;
+  }
+  .news-div-heading-main-detail{
+    font-size: 22px;
+  }
+  .news-div-details-div1-desc-h2,.news-div-details-div2-desc-h2,.news-div-details-div3-desc-h2{
+    font-size: 22px;
+    width: 172px;
+  }
+  .news-div-details-div3-desc-p1,.news-div-details-div2-desc-p1,.news-div-details-div1-desc-p1{
+    font-size: 30px;
+  }
+  .news-div-details-div3-desc-p2,.news-div-details-div2-desc-p2,.news-div-details-div1-desc-p2{
+    font-size: 20px;
+    font-weight: 329;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    margin-bottom: 25px;
+}
+}
+
+@media screen and (min-width: 392px) and (max-width: 767px){
+  .news-div{
+    padding: 1rem 1rem;
+    
+  }
+  .news-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .news-div-heading-p{
+    font-size: 35px;
+  }
+  .news-div-heading-logo-img{
+    height: 35px;
+    width: 90px;
+  }
+  .news-div-heading-main-detail{
+    font-size: 24px;
+  }
+  .news-div-details{
+    
+    flex-direction: column;
+  }
+  .news-div-details-div1,.news-div-details-div2,.news-div-details-div3{
+    width: 375px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    
+    }
+  .news-div-details-div1-desc-h2,.news-div-details-div2-desc-h2,.news-div-details-div3-desc-h2{
+    font-size: 22px;
+    width: 172px;
+  }
+  .news-div-details-div3-desc-p1,.news-div-details-div2-desc-p1,.news-div-details-div1-desc-p1{
+    font-size: 30px;
+  }
+  .news-div-details-div3-desc-p2,.news-div-details-div2-desc-p2,.news-div-details-div1-desc-p2{
+    font-size: 22px;
+    font-weight: 329;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    margin-bottom: 25px;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px){
+  .news-div{
+    padding: 1rem 1rem;
+    
+  }
+  .news-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .news-div-heading-p{
+    font-size: 55px;
+  }
+  .news-div-heading-logo-img{
+    height: 45px;
+    width: 110px;
+  }
+  .news-div-heading-main-detail{
+    font-size: 35px;
+    margin-bottom: 70px;
+  }
+  .news-div-details{
+    
+    flex-direction: column;
+  }
+  
+  .news-div-details-div1,.news-div-details-div2,.news-div-details-div3{
+    width: 590px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    
+    }
+  .news-div-details-div1-desc-h2,.news-div-details-div2-desc-h2,.news-div-details-div3-desc-h2{
+    font-size: 29px;
+    width: 250px;
+  }
+  .news-div-details-div3-desc-p1,.news-div-details-div2-desc-p1,.news-div-details-div1-desc-p1{
+    font-size: 48px;
+    line-height: 48px;
+  }
+  .news-div-details-div3-desc-p2,.news-div-details-div2-desc-p2,.news-div-details-div1-desc-p2{
+    font-size: 35px;
+    font-weight: 399;
+    line-height: 40px;
+    letter-spacing: 0.2px;
+    margin-bottom: 45px;
+}
+}
+
+
+@media screen and (min-width: 1001px) and (max-width: 1300px){
+  .news-div{
+    padding: 1rem 1rem;
+    
+  }
+  .news-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .news-div-heading-p{
+    font-size: 65px;
+  }
+  .news-div-heading-logo-img{
+    height: 50px;
+    width: 125px;
+  }
+  .news-div-heading-main-detail{
+    font-size: 38px;
+    margin-bottom: 70px;
+  }
+  .news-div-details{
+    
+    flex-direction: column;
+  }
+  
+  .news-div-details-div1,.news-div-details-div2,.news-div-details-div3{
+    width: 625px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    
+    }
+  .news-div-details-div1-desc-h2,.news-div-details-div2-desc-h2,.news-div-details-div3-desc-h2{
+    font-size: 35px;
+    width: 250px;
+  }
+  .news-div-details-div3-desc-p1,.news-div-details-div2-desc-p1,.news-div-details-div1-desc-p1{
+    font-size: 55px;
+    line-height: 55px;
+  }
+  .news-div-details-div3-desc-p2,.news-div-details-div2-desc-p2,.news-div-details-div1-desc-p2{
+    font-size: 40px;
+    font-weight: 399;
+    line-height: 45px;
+    letter-spacing: 0.2px;
+    margin-bottom: 45px;
+}
+}
+
+/* Logos */
+
+
+.logos-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  
+  background-size: cover;
+  width: 100%;
+}
+.logos-div-call{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+z-index: 1;
+background-color: rgba(26, 118, 209, 0.8);
+width:100%;
+height: 15rem;
+}
+
+.logos-div-call-alignment{
+
+  display: flex;
+  justify-content: center;
+  
+  align-items: center;
+  
+}
+
+.logos-div-call-alignment-logo1-img,.logos-div-call-alignment-logo2-img,.logos-div-call-alignment-logo3-img,.logos-div-call-alignment-logo4-img,.logos-div-call-alignment-logo5-img{
+  max-width: 140px;
+  max-height: 80px;
+}
+.logos-div-call-alignment-logo1,.logos-div-call-alignment-logo2,.logos-div-call-alignment-logo3,.logos-div-call-alignment-logo4{
+  margin-right: 80px;
+}
+
+@media screen and (max-width: 391px) {
+  .logos-div-call{
+    padding: 4rem 4rem;
+    height: auto;
+  }
+  
+  .logos-div-call-alignment{
+    
+    flex-wrap: wrap;
+  }
+  .logos-div-call-alignment-logo1-img,.logos-div-call-alignment-logo2-img,.logos-div-call-alignment-logo3-img,.logos-div-call-alignment-logo4-img,.logos-div-call-alignment-logo5-img{
+    width: 120px;
+    height: 70px;
+  }
+  .logos-div-call-alignment-logo1,.logos-div-call-alignment-logo2,.logos-div-call-alignment-logo3,.logos-div-call-alignment-logo4{
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 392px) and (max-width: 767px) {
+  .logos-div-call{
+    padding: 4rem 4rem;
+    height: auto;
+  }
+  
+  .logos-div-call-alignment{
+    flex-direction: column;
+    
+  }
+  .logos-div-call-alignment-logo1-img,.logos-div-call-alignment-logo2-img,.logos-div-call-alignment-logo3-img,.logos-div-call-alignment-logo4-img,.logos-div-call-alignment-logo5-img{
+    width: 140px;
+    height: 80px;
+  }
+  .logos-div-call-alignment-logo1,.logos-div-call-alignment-logo2,.logos-div-call-alignment-logo3,.logos-div-call-alignment-logo4{
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .logos-div-call{
+    padding: 4rem 4rem;
+    height: auto;
+  }
+  
+  .logos-div-call-alignment{
+    flex-wrap: wrap;
+    
+  }
+  .logos-div-call-alignment-logo1-img,.logos-div-call-alignment-logo2-img,.logos-div-call-alignment-logo3-img,.logos-div-call-alignment-logo4-img,.logos-div-call-alignment-logo5-img{
+    width: 175px;
+    height: 100px;
+  }
+  .logos-div-call-alignment-logo1,.logos-div-call-alignment-logo2,.logos-div-call-alignment-logo3,.logos-div-call-alignment-logo4{
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+  .logos-div-call{
+    padding: 4rem 4rem;
+    height: auto;
+  }
+  
+  .logos-div-call-alignment{
+    flex-wrap: wrap;
+    
+  }
+  .logos-div-call-alignment-logo1-img,.logos-div-call-alignment-logo2-img,.logos-div-call-alignment-logo3-img,.logos-div-call-alignment-logo4-img,.logos-div-call-alignment-logo5-img{
+    width: 250px;
+    height: 130px;
+  }
+  .logos-div-call-alignment-logo1,.logos-div-call-alignment-logo2,.logos-div-call-alignment-logo3,.logos-div-call-alignment-logo4{
+    margin-bottom: 25px;
+  }
+}
+
+/* Appoinment */
+
+.appointment-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color:var(--mainWhite);
+  
+}
+
+.appointment-div-heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 30px;
+}
+.appointment-div-heading-p{
+  font-size: 35px;
+  font-weight:649;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+.appointment-div-heading-logo{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  
+}
+.appointment-div-heading-logo-img{
+  height: 20px;
+  width: 65px;
+}
+.appointment-div-heading-main-detail{
+  font-size: 17px;
+  font-weight:400;
+  
+}
+
+
+.appointment-div-booking{
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+  margin-bottom: 35px;
+}
+.appointment-div-booking-registration {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+.appointment-div-booking-registration,.appointment-div-booking-image{
+  width: 50%;
+  
+}
+
+.appointment-div-booking-registration{
+  margin-right: 70px;
+}
+.appointment-div-booking-registration-form-name,.appointment-div-booking-registration-form-numberemail{
+  display: flex;
+}
+.appointment-div-booking-registration-form-name
+input[type=text],.appointment-div-booking-registration-form-numberemail input[type=tel],.appointment-div-booking-registration-form-numberemail input[type=email]{
+  margin-right: 15px;
+}
+.appointment-div-booking-registration-form-name
+input[type=text],
+.appointment-div-booking-registration-form-numberemail input[type=email],
+.appointment-div-booking-registration-form-numberemail input[type=tel] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-right: 15px;
+  margin-bottom: 16px;
+  resize: vertical;
+  
+}
+.appointment-div-booking-registration-form-depamsg{
+  display: flex;
+  
+}
+
+.appointment-div-booking-registration-form-depa,.appointment-div-booking-registration-form-msg{
+  display: flex;
+  flex-direction: column;
+  
+}
+.appointment-div-booking-registration-form-time{
+ 
+ margin-left: 30px;
+}
+.appointment-div-booking-registration-form-time label{
+  color: var(--mainBlack);
+  font-size: 17px;
+  font-weight: 400;
+  margin-right: 15px;
+  padding-bottom: 15px;
+
+}
+.appointment-div-booking-registration-form-time input{
+  background-position: 15px 50%;
+  background-size: 15px;
+  transition: backgroundImage 0.25s;
+  
+  width: 100%;
+  margin-top: 5px;
+  height: 40px;
+  font-size: 17px;
+}
+
+.appointment-div-booking-registration-form select,
+.appointment-div-booking-registration-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-right: 75px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.appointment-div-booking-registration-form-submit{
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment-div-booking-registration-form-submit input[type=submit] {
+  background-color: #1A76D1;
+  letter-spacing: 2px;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight:450;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+.appointment-div-booking-registration-form-submit input[type=submit]:hover {
+  background-color: #45a049;
+}
+.appointment-div-booking-registration-form label[for=department],.appointment-div-booking-registration-form label[for=subject]{
+  font-size: 17px;
+  font-weight:400;
+  color: var(--mainBlack);
+}
+
+.appointment-div-booking-registration-form-submit-p{
+  font-size: 17px;
+  font-weight:500;
+  color: var(--mainBlack);
+  margin-top: 20px;
+  background-color:var(--primaryLightColor);
+  letter-spacing: 0.8px;
+  
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+
+@media screen and (max-width: 391px) {
+  .appointment-div{
+    padding: 1rem 1.5rem;
+    
+  }
+  .appointment-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .appointment-div-heading-p{
+    font-size: 30px;
+  }
+  .appointment-div-booking{
+    flex-direction: column-reverse;
+  }
+  .appointment-div-booking-registration,.appointment-div-booking-image{
+    width: 100%;
+    margin: 0 auto; 
+  }
+  .appointment-div-booking-image{
+    margin-bottom: 25px;
+  }
+  .appointment-div-booking-registration-form-name,.appointment-div-booking-registration-form-numberemail{
+    flex-direction: column;
+  }
+  
+}
+
+@media screen and (min-width: 392px) and (max-width: 767px){
+  .appointment-div{
+    padding: 1rem 1.5rem;
+    
+  }
+  .appointment-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .appointment-div-heading-p{
+    font-size: 35px;
+  }
+  .appointment-div-heading-logo-img{
+    height: 35px;
+    width: 90px;
+  }
+  .appointment-div-heading-main-detail{
+    font-size: 24px;
+    
+  }
+  .appointment-div-booking{
+    flex-direction: column-reverse;
+  }
+  .appointment-div-booking-registration,.appointment-div-booking-image{
+    width: 100%;
+    margin: 0 auto; 
+  }
+  .appointment-div-booking-image{
+    margin-bottom: 25px;
+  }
+  .appointment-div-booking-registration-form-name,.appointment-div-booking-registration-form-numberemail{
+    flex-direction: column;
+  }
+  .appointment-div-booking-registration-form-name input[type=text],
+  .appointment-div-booking-registration-form-numberemail input[type=email],
+  .appointment-div-booking-registration-form-numberemail input[type=tel] {
+  padding: 16px;
+  font-size: 22px;
+  }
+  .appointment-div-booking-registration-form select,
+  .appointment-div-booking-registration-form textarea {
+  padding: 16px;
+  font-size: 20px;
+  }
+  .appointment-div-booking-registration-form label[for=department],.appointment-div-booking-registration-form label[for=subject],.appointment-div-booking-registration-form-time label[for=time]{
+  font-size: 22px;
+  }
+  .appointment-div-booking-registration-form-submit-p{
+  font-size: 25px;
+  }
+  .appointment-div-booking-registration-form-submit input[type=submit] {
+    font-size: 22px;
+  }
+  .appointment-div-booking-registration-form-time input[type=time]{
+    height: 50px;
+    width: 140px;
+    font-size: 22px;
+  }
+  
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px){
+  .appointment-div{
+    padding: 1rem 1.5rem;
+    
+  }
+  .appointment-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+    margin-top: 55px;
+  }
+  .appointment-div-heading-p{
+    font-size: 55px;
+  }
+  .appointment-div-heading-logo-img{
+    height: 45px;
+    width: 110px;
+  }
+  .appointment-div-heading-main-detail{
+    font-size: 35px;
+    
+  }
+  .appointment-div-booking{
+    flex-direction: column-reverse;
+  }
+  .appointment-div-booking-registration,.appointment-div-booking-image{
+    width: 100%;
+    margin: 0 auto; 
+  }
+  .appointment-div-booking-image{
+    margin-bottom: 45px;
+  }
+  .appointment-div-booking-registration-form-name,.appointment-div-booking-registration-form-numberemail{
+    flex-direction: column;
+  }
+  .appointment-div-booking-registration-form-name input[type=text],
+  .appointment-div-booking-registration-form-numberemail input[type=email],
+  .appointment-div-booking-registration-form-numberemail input[type=tel] {
+  padding: 16px;
+  font-size: 25px;
+  }
+  .appointment-div-booking-registration-form select,
+  .appointment-div-booking-registration-form textarea {
+  padding: 16px;
+  font-size: 25px;
+  }
+  .appointment-div-booking-registration-form label[for=department],.appointment-div-booking-registration-form label[for=subject],.appointment-div-booking-registration-form-time label[for=time]{
+  font-size: 25px;
+  }
+  .appointment-div-booking-registration-form-submit-p{
+  font-size: 25px;
+  }
+  .appointment-div-booking-registration-form-submit input[type=submit] {
+    font-size: 25px;
+  }
+  .appointment-div-booking-registration-form-time input[type=time]{
+    height: 60px;
+    font-size: 25px;
+  }
+  .appointment-div-booking-registration-form{
+    width: 650px;
+  }
+  
+}
+
+
+@media screen and (min-width: 1001px) and (max-width: 1300px){
+  .appointment-div{
+    padding: 1rem 1.5rem;
+    
+  }
+  .appointment-div-heading{
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+    margin-top: 55px;
+  }
+  .appointment-div-heading-p{
+    font-size: 65px;
+  }
+  .appointment-div-heading-logo-img{
+    height: 50px;
+    width: 125px;
+  }
+  .appointment-div-heading-main-detail{
+    font-size: 38px;
+    
+  }
+  .appointment-div-booking{
+    flex-direction: column-reverse;
+  }
+  .appointment-div-booking-registration,.appointment-div-booking-image{
+    width: 100%;
+    margin: 0 auto; 
+  }
+  .appointment-div-booking-image{
+    margin-bottom: 45px;
+  }
+  .appointment-div-booking-registration-form-name,.appointment-div-booking-registration-form-numberemail{
+    flex-direction: column;
+  }
+  .appointment-div-booking-registration-form-name input[type=text],
+  .appointment-div-booking-registration-form-numberemail input[type=email],
+  .appointment-div-booking-registration-form-numberemail input[type=tel] {
+  padding: 16px;
+  font-size: 30px;
+  }
+  .appointment-div-booking-registration-form select,
+  .appointment-div-booking-registration-form textarea {
+  padding: 16px;
+  font-size: 30px;
+  }
+  .appointment-div-booking-registration-form label[for=department],.appointment-div-booking-registration-form label[for=subject],.appointment-div-booking-registration-form-time label[for=time]{
+  font-size: 35px;
+  }
+  .appointment-div-booking-registration-form-submit-p{
+  font-size: 35px;
+  }
+  .appointment-div-booking-registration-form-submit input[type=submit] {
+    font-size: 30px;
+  }
+  .appointment-div-booking-registration-form-time input[type=time]{
+    height: 60px;
+    font-size: 30px;
+  }
+  .appointment-div-booking-registration-form{
+    width: 800px;
+  }
+  
+}
+
+
+/* NewsLetter */
+
+.newsletter-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  
+  height: 18rem;
+  background-color: #D8DAEB;
+}
+.newsletter-div-heading{
+display: flex;
+flex-direction: column;
+left: 20px;
+width: 300px;
+margin-right: 100px;
+}
+.newsletter-div-input{
+display: flex;
+justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 600px;
+}
+
+.newsletter-div-input-form input[type=email] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-right: 15px;
+  margin-bottom: 16px;
+  resize: vertical;
+  
+}
+
+.newsletter-div-input-form input[type=submit] {
+  background-color: #1A76D1;
+  letter-spacing: 2px;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight:450;
+  
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+.newsletter-div-input-form input[type=submit]:hover {
+  background-color: #45a049;
+}
+.newsletter-div-input-form{
+  display: flex;
+  justify-content: center;
+    align-items: center;
+  }
+
+.newsletter-div-input-form-submit-p{
+  font-size: 17px;
+  font-weight:500;
+  color: var(--mainWhite);
+  margin-top: 20px;
+  background-color:var(--primaryColor);
+  letter-spacing: 0.8px;
+  
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+.newsletter-div-heading-p{
+  font-size: 15px;
+  font-weight:400;
+  
+}
+
+
+
+@media screen and (max-width: 391px) {
+  .newsletter-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    height: auto;
+  }
+  .newsletter-div-heading {
+    margin-top: 2rem;
+    width: 90%;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    margin-right: 0px;
+  }
+  .newsletter-div-heading-h2{
+    font-size: 35px;
+  }
+  .newsletter-div-heading-p{
+    font-size: 17px;
+  }
+  .newsletter-div-input{
+    width: 100%;
+    margin: 0 auto; 
+  }
+  .newsletter-div-input-form{
+    flex-direction: column;
+    align-items: initial;
+  }
+  .newsletter-div-input-form input[type=submit] {
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 392px) and (max-width: 767px) {
+  .newsletter-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    height: auto;
+  }
+  .newsletter-div-heading {
+    margin-top: 2rem;
+    width: 90%;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    margin-right: 20px;
+  }
+  .newsletter-div-heading-h2{
+    font-size: 40px;
+  }
+  .newsletter-div-heading-p{
+    font-size: 22px;
+  }
+  .newsletter-div-input{
+    width: 100%;
+    margin: 0 auto; 
+  }
+  .newsletter-div-input-form{
+    flex-direction: column;
+    align-items: initial;
+  }
+  .newsletter-div-input-form-submit-p{
+    font-size: 22px;
+  }
+  .newsletter-div-input-form input[type=submit] {
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-top: 20px;
+  }
+  .newsletter-div-input-form input[type=email] {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .newsletter-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    height: auto;
+  }
+  .newsletter-div-heading {
+    margin-top: 2rem;
+    width: 90%;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    margin-right: 20px;
+  }
+  .newsletter-div-heading-h2{
+    font-size: 61px;
+  }
+  .newsletter-div-heading-p{
+    font-size: 35px;
+  }
+  .newsletter-div-input{
+    width: 100%;
+    margin: 0 auto; 
+  }
+  .newsletter-div-input-form{
+    flex-direction: column;
+    align-items: initial;
+  }
+  .newsletter-div-input-form-submit-p{
+    font-size: 30px;
+  }
+  .newsletter-div-input-form input[type=submit] {
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-right: 0px;
+    margin-top: 35px;
+  }
+  .newsletter-div-input-form input[type=email] {
+    font-size: 30px;
+    margin-top: 35px;
+  }
+}
+
+
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+  .newsletter-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    height: auto;
+  }
+  .newsletter-div-heading {
+    margin-top: 2rem;
+    width: 90%;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    margin-right: 20px;
+  }
+  .newsletter-div-heading-h2{
+    font-size: 75px;
+  }
+  .newsletter-div-heading-p{
+    font-size: 45px;
+  }
+  .newsletter-div-input{
+    width: 100%;
+    margin: 0 auto; 
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .newsletter-div-input-form-submit-p{
+    font-size: 40px;
+  }
+  .newsletter-div-input-form input[type=submit] {
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 35px;
+  }
+  .newsletter-div-input-form input[type=email] {
+    font-size: 40px;
+    margin-top: 35px;
+  }
+}
+
+/* footer */
+
+
+.footer{
+  display: flex;
+  
+  justify-content: center;
+  background-color: var(--backgroundblue);
+  height: 20rem;
+}
+.footer-links,.footer-open,.footer-contact{
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+  margin-top: 35px;
+}
+
+.footer-links-line,.footer-open-line,.footer-contact-line{
+  height: 1.3px;
+  width: 100px;
+  border: 2px solid var(--mainWhite);
+  margin-left: 15px;
+  margin-bottom:20px;
+}
+
+.footer-open-opening-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-links h2,.footer-open h2, .footer-contact h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+  color: var(--mainWhite);
+}
+
+.footer-links h3{
+  margin-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 8px;
+  font-weight: 650;
+  
+}
+.footer-open-opening-time{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-open-opening-time-days p,.footer-open-opening-time-timing p{
+  line-height: 0.4;
+  margin-top: 8px;
+  color: var(--mainWhite);
+  font-weight: 450;
+}
+.footer-link-h3-link1,.footer-link-h3-link2,.footer-link-h3-link3,.footer-link-h3-link4{
+  color: var(--mainWhite);
+  text-decoration: none;
+}
+.footer-link-h3-link1:hover,.footer-link-h3-link2:hover,.footer-link-h3-link3:hover,.footer-link-h3-link4:hover{
+  text-decoration: underline; 
+  
+}
+.footer-contact-img{
+  display: flex;
+}
+.footer-contact-pic1,.footer-contact-pic2,.footer-contact-pic3{
+  border-radius: 50%;
+  border: 2px solid var(--mainWhite);
+  margin-right: 20px;
+  width: 37px;
+  height: 30px;
+  padding-left: 4px;
+
+}
+.footer-contact-pic1:hover,.footer-contact-pic2:hover,.footer-contact-pic3:hover{
+  border: 2px solid var(--primaryLightColor);
+}
+
+
+
+@media screen and (max-width: 391px) {
+  
+  .footer{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 0rem;
+    padding-bottom: 3rem;
+    height: auto;
+    padding-left: 30px;
+  }
+  .footer-links,.footer-open,.footer-contact{
+    margin-right: 0px;
+    margin-top: 50px;
+  }
+  .footer-open-opening-time{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  .footer-open-opening-time-days{
+    margin-right: 25px;
+  }
+}
+
+@media screen and (min-width: 392px) and (max-width: 767px) {
+  
+  .footer{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 0rem;
+    padding-bottom: 4rem;
+    height: auto;
+    padding-left: 65px;
+  }
+  .footer-links,.footer-open,.footer-contact{
+    margin-right: 0px;
+    margin-top: 50px;
+  }
+  .footer-open-opening-time{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  .footer-open-opening-time-days{
+    margin-right: 25px;
+  }
+  .footer-links h2,.footer-open h2, .footer-contact h2 {
+    font-size: 35px;
+  }
+  .footer-link-h3-link1,.footer-link-h3-link2,.footer-link-h3-link3,.footer-link-h3-link4{
+    font-size: 25px;
+  }
+  .footer-open-opening-time-days p,.footer-open-opening-time-timing p{
+    font-size: 21px;
+  }
+  .footer-contact-pic1,.footer-contact-pic2,.footer-contact-pic3{
+    margin-right: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  
+  .footer{
+    padding: 1rem 1rem;
+    flex-wrap: wrap;
+    padding-top: 0rem;
+    padding-bottom: 4rem;
+    height: auto;
+    padding-left: 20px;
+  }
+  .footer-links,.footer-open,.footer-contact{
+    margin-right: 50px;
+    margin-top: 50px;
+  }
+  .footer-open-opening-time{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  .footer-open-opening-time-days{
+    margin-right: 25px;
+  }
+  .footer-links h2,.footer-open h2, .footer-contact h2 {
+    font-size: 45px;
+  }
+  .footer-link-h3-link1,.footer-link-h3-link2,.footer-link-h3-link3,.footer-link-h3-link4{
+    font-size: 29px;
+  }
+  .footer-open-opening-time-days p,.footer-open-opening-time-timing p{
+    font-size: 28px;
+    line-height: 1;
+  }
+  .footer-contact-pic1,.footer-contact-pic2,.footer-contact-pic3{
+    margin-right: 40px;
+  }
+  .footer-links-line,.footer-open-line,.footer-contact-line{
+    width: 160px;
+    margin-left: 25px;
+  }
+}
+
+
+
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+  
+  .footer{
+    padding: 1rem 1rem;
+    flex-wrap: wrap;
+    padding-top: 0rem;
+    padding-bottom: 5rem;
+    height: auto;
+    padding-left: 20px;
+  }
+  .footer-links,.footer-open,.footer-contact{
+    margin-right: 50px;
+    margin-top: 50px;
+  }
+  .footer-open-opening-time{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  .footer-open-opening-time-days{
+    margin-right: 25px;
+  }
+  .footer-links h2,.footer-open h2, .footer-contact h2 {
+    font-size: 55px;
+  }
+  .footer-link-h3-link1,.footer-link-h3-link2,.footer-link-h3-link3,.footer-link-h3-link4{
+    font-size: 35px;
+  }
+  .footer-open-opening-time-days p,.footer-open-opening-time-timing p{
+    font-size: 31px;
+    line-height: 1;
+  }
+  .footer-contact-pic1,.footer-contact-pic2,.footer-contact-pic3{
+    margin-right: 40px;
+  }
+  .footer-links-line,.footer-open-line,.footer-contact-line{
+    width: 220px;
+    margin-left: 25px;
+  }
+}
+
+/* ContactUS */
+
+
+.contact{
+  background-color: var(--mainWhite);
+}
+.contact-div{
+  display: flex;
+  flex-direction: column;
+  width: var(--fullWidth);
+  margin: 0 auto;
+  padding-top: 35px;
+  padding-bottom: 40px;
+  
+}
+.contact-line{
+  height: 1.3px;
+  width: 100px;
+  border: 2px solid var(--blue);
+  margin-left: 15px;
+  margin-bottom:20px;
+}
+.contact-div-main{
+  font-size: 35px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.contact-passage{
+  font-size: 18px;
+  font-weight: 400;
+}
+.contact-email-span,.contact-phone-span{
+  font-size: 18px;
+  font-weight: 400;
+}
+.contact-email,.contact-phone{
+  font-size: 22px;
+  font-weight: 650;
+}
+.contact-address-sub{
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.contact-address p{
+  font-size: 18px;
+  font-weight: 400;
+  
+}
+
+
+
+@media screen and (max-width: 388px) {
+  
+  .contact-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    height: auto;
+    padding-left: 30px;
+    width: 99%;
+  }
+  
+}
+
+@media screen and (min-width: 389px) and (max-width: 767px) {
+  
+  .contact-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    height: auto;
+    padding-left: 30px;
+    padding-right: 25px;
+    width: 99%;
+  }
+  .contact-div-main{
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+  .contact-line{ 
+    width: 130px;
+    margin-left: 15px;
+  }
+  .contact-passage{
+    font-size: 22px;
+  }
+  .contact-email-span,.contact-phone-span{
+    font-size: 22px;
+  }
+  .contact-email,.contact-phone{
+    font-size: 24px;
+    font-weight: 650;
+  }
+  .contact-address-sub{
+    font-size: 30px;
+    margin-top: 0px;
+  }
+  .contact-address p{
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  
+  .contact-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    height: auto;
+    padding-left: 60px;
+    padding-right: 25px;
+    width: 99%;
+  }
+  .contact-div-main{
+    font-size: 52px;
+    margin-bottom: 5px;
+  }
+  .contact-line{ 
+    width: 200px;
+    margin-left: 15px;
+  }
+  .contact-passage{
+    font-size: 32px;
+  }
+  .contact-email-span,.contact-phone-span{
+    font-size: 32px;
+  }
+  .contact-email,.contact-phone{
+    font-size: 35px;
+    font-weight: 650;
+  }
+  .contact-address-sub{
+    font-size: 38px;
+    margin-top: 0px;
+  }
+  .contact-address p{
+    font-size: 32px;
+  }
+}
+
+
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+  
+  .contact-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    height: auto;
+    padding-left: 100px;
+    padding-right: 60px;
+    width: 99%;
+  }
+  .contact-div-main{
+    font-size: 65px;
+    margin-bottom: 5px;
+  }
+  .contact-line{ 
+    width: 240px;
+    margin-left: 15px;
+  }
+  .contact-passage{
+    font-size: 36px;
+  }
+  .contact-email-span,.contact-phone-span{
+    font-size: 36px;
+  }
+  .contact-email,.contact-phone{
+    font-size: 41px;
+    font-weight: 650;
+  }
+  .contact-address-sub{
+    font-size: 44px;
+    margin-top: 0px;
+  }
+  .contact-address p{
+    font-size: 36px;
+  }
+}
+
+/* Docters */
+
+
+.docters{
+  background-color: var(--mainWhite);
+}
+.docters-div{
+  display: flex;
+  flex-direction: column;
+  width: var(--fullWidth);
+  margin: 0 auto;
+  padding-top: 35px;
+  padding-bottom: 40px;
+  
+}
+.docters-line{
+  height: 1.3px;
+  width: 200px;
+  border: 2px solid var(--blue);
+  margin-left: 15px;
+  margin-bottom:20px;
+}
+.docters-div-main{
+  font-size: 35px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  margin-top: 25px;
+}
+
+.docters-address-cardiologist,.docters-address-neurology{
+  margin-left: 15px;
+}
+.docters-address-cardiologist h2,.docters-address-neurology h2{
+  font-size: 25px;
+  font-weight: bold;
+  
+  margin-bottom: 5px;
+}
+.docters-address-cardiologist-docters,.docters-address-neurology-docter{
+  margin-left: 15px;
+}
+.docters-address-cardiologist-docters h2,.docters-address-neurology-docter h2{
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+.docters-address-cardiologist-docters ul li,.docters-address-neurology-docter ul li{
+  font-size: 17px;
+  font-weight: 400;
+  
+  margin-bottom: 5px;
+}
+.docters-address-neurology{
+  margin-bottom: 35px;
+}
+.docters-div-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 45px;
+  margin-top: 40px;
+}
+.docters-div-button-appoinment-btn {
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  color: white;
+  background: var(--primaryColor);
+  margin-right: 25px;
+  border: 2px solid var(--primaryColor);
+  padding: 0.45rem 0.8rem;
+  display: inline-block;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: var(--mainBorderRadius);
+  
+}
+.docters-div-button-appoinment-btn:hover {
+  background-color:#6BE6C2;
+  
+}
+.docters-div-button-appoinment-btn-link {
+  color: white;
+}
+.docters-div-button-appoinment-btn-link:hover {
+  color: var(--mainBlack);
+}
+
+
+.docters-div-button-home {
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  color: white;
+  background: var(--primaryColor);
+  
+  border: 2px solid var(--primaryColor);
+  padding: 0.45rem 0.8rem;
+  display: inline-block;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: var(--mainBorderRadius);
+  
+}
+.docters-div-button-home:hover {
+  background-color:#6BE6C2;
+  
+}
+.docters-div-button-home-link {
+  color: white;
+}
+.docters-div-button-home-link:hover {
+  color: var(--mainBlack);
+}
+
+@media screen and (max-width: 388px) {
+  
+  .docters-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: auto;
+    padding-left: 30px;
+    width: 99%;
+  }
+  .docters-div-button{
+    flex-direction: column;
+    margin-top: 15px;
+  }
+  .docters-div-button-home {
+    margin-top: 35px;
+  }
+}
+
+@media screen and (min-width: 389px) and (max-width: 767px) {
+  
+  .docters-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: auto;
+    padding-left: 30px;
+    width: 99%;
+  }
+  .docters-line{
+    height: 1.6px;
+    width: 250px;
+    margin-left: 22px;
+  }
+  .docters-div-main{
+    font-size: 40px;
+  }
+  .docters-address-cardiologist h2,.docters-address-neurology h2{
+    font-size: 28px;
+    margin-bottom:5px;
+  }
+  .docters-address-cardiologist-docters h2,.docters-address-neurology-docter h2{
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .docters-address-cardiologist-docters ul li,.docters-address-neurology-docter ul li{
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .docters-div-button{
+    flex-direction: column;
+    margin-top: 15px;
+  }
+  .docters-div-button-appoinment-btn-link,.docters-div-button-home-link{
+    font-size: 22px;
+  }
+  .docters-div-button-home {
+    margin-top: 35px;
+    
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  
+  .docters-div{
+    padding: 1rem 3rem;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: auto;
+    padding-left: 60px;
+    width: 99%;
+  }
+  .docters-line{
+    height: 4px;
+    width: 350px;
+    margin-left: 22px;
+  }
+  .docters-div-main{
+    font-size: 55px;
+  }
+  .docters-address-cardiologist h2,.docters-address-neurology h2{
+    font-size: 36px;
+    margin-bottom:5px;
+  }
+  .docters-address-cardiologist-docters h2,.docters-address-neurology-docter h2{
+    font-size: 34px;
+    margin-bottom: 15px;
+  }
+  .docters-address-cardiologist-docters ul li,.docters-address-neurology-docter ul li{
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  .docters-div-button{
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .docters-div-button-appoinment-btn-link,.docters-div-button-home-link{
+    font-size: 31px;
+  }
+  .docters-div-button-home {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+  
+  .docters-div{
+    padding: 1rem 3rem;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    height: auto;
+    padding-left: 100px;
+    width: 99%;
+  }
+  .docters-line{
+    height: 4px;
+    width: 400px;
+    margin-left: 22px;
+  }
+  .docters-div-main{
+    font-size: 65px;
+  }
+  .docters-address-cardiologist h2,.docters-address-neurology h2{
+    font-size: 49px;
+    margin-bottom:29px;
+    margin-top: 29px;
+  }
+  .docters-address-cardiologist-docters h2,.docters-address-neurology-docter h2{
+    font-size: 41px;
+    margin-bottom: 15px;
+  }
+  .docters-address-cardiologist-docters ul li,.docters-address-neurology-docter ul li{
+    font-size: 37px;
+    margin-bottom: 15px;
+  }
+  .docters-div-button{
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .docters-div-button-appoinment-btn-link,.docters-div-button-home-link{
+    font-size: 37px;
+  }
+  .docters-div-button-home {
+    margin-top: 50px;
+  }
+  .docters-address-cardiologist-docters,.docters-address-neurology-docter{
+    margin-left: 40px;
+  }
+}
+
+
+/* NotFound */
+
+
+
+.notfound{
+  background-color: var(--mainWhite);
+}
+.notfound-div{
+  display: flex;
+  flex-direction: column;
+  width: var(--fullWidth);
+  margin: 0 auto;
+  padding-top: 35px;
+  padding-bottom: 40px;
+  
+}
+
+.notfound-head{
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  margin-top: 25px;
+}
+
+
+
+.notfound-div-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 45px;
+  margin-top: 40px;
+}
+.notfound-div-button-appoinment-btn,.notfound-div-button-home {
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  color: white;
+  background: var(--primaryColor);
+  margin-right: 40px;
+  border: 2px solid var(--primaryColor);
+  padding: 0.45rem 0.8rem;
+  display: inline-block;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: var(--mainBorderRadius);
+  
+}
+.notfound-div-button-appoinment-btn:hover,.notfound-div-button-home:hover {
+  background-color:#6BE6C2;
+  
+}
+.notfound-div-button-appoinment-btn-link,.notfound-div-button-home-link {
+  color: white;
+}
+.notfound-div-button-appoinment-btn-link:hover,.notfound-div-button-home-link:hover {
+  color: var(--mainBlack);
+}
+
+@media screen and (max-width: 388px) {
+  
+  .notfound-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: auto;
+    padding-left: 30px;
+    width: 99%;
+  }
+  .notfound-div-button{
+    flex-direction: column;
+    margin-top: 35px;
+    
+  }
+  .notfound-div-button-home{
+    margin-top: 35px;
+  }
+}
+
+@media screen and (min-width: 389px) and (max-width: 767px) {
+  
+  .notfound-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: auto;
+    padding-left: 30px;
+    width: 99%;
+  }
+  .notfound-head{
+    font-size: 45px;
+  }
+  .notfound-div-button-appoinment-btn,.notfound-div-button-home {
+    font-size: 24px;
+  }
+  .notfound-div-button{
+    flex-direction: column;
+    margin-top: 45px;
+    
+  }
+  .notfound-div-button-home{
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  
+  .notfound-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: auto;
+    padding-left: 30px;
+    width: 99%;
+  }
+  .notfound-head{
+    font-size: 60px;
+  }
+  .notfound-div-button-appoinment-btn,.notfound-div-button-home {
+    font-size: 35px;
+  }
+  .notfound-div-button{
+    flex-direction: column;
+    margin-top: 65px;
+    
+  }
+  .notfound-div-button-home{
+    margin-top: 70px;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+  
+  .notfound-div{
+    padding: 1rem 1rem;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: auto;
+    padding-left: 30px;
+    width: 99%;
+  }
+  .notfound-head{
+    font-size: 75px;
+  }
+  .notfound-div-button-appoinment-btn,.notfound-div-button-home {
+    font-size: 48px;
+  }
+  .notfound-div-button{
+    flex-direction: column;
+    margin-top: 85px;
+    
+  }
+  .notfound-div-button-home{
+    margin-top: 90px;
+  }
+}
